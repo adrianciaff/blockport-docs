@@ -4,58 +4,96 @@
  * work well for content-centric websites.
  */
 
-/* You can override the default Infima variables here. */
-:root {
-  /* --- UPDATED Light Mode Background --- */
+ :root {
+  /* --- Light Mode Background --- */
   --ifm-background-color: #FAFAFA; /* Slightly off-white */
+
+  /* --- Set Navbar/Footer background to match page background --- */
+  --ifm-navbar-background-color: var(--ifm-background-color);
+  --ifm-footer-background-color: var(--ifm-background-color);
 
   /* --- Primary color for Light Mode (Active items) --- */
   --ifm-color-primary: #FB8500; /* TANGERINE */
   --ifm-menu-color-active: #FB8500; /* TANGERINE */
 
-  --ifm-code-font-size: 95%;
-  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
-
-  /* --- Font Rule (Neulis Sans default) --- */
-  --ifm-font-family-base: 'neulis-sans', sans-serif;
-
-  /* --- Light Mode Navbar Text Colors (ensure contrast on off-white) --- */
+  /* --- Light Mode Navbar Text Colors --- */
   --ifm-navbar-link-color: #02263C; /* PRUSSIAN BLUE */
   --ifm-navbar-link-hover-color: var(--ifm-color-primary); /* TANGERINE on hover */
   --ifm-navbar-link-active-color: var(--ifm-color-primary); /* TANGERINE when active */
   --ifm-navbar-title-color: #010D14; /* RICH BLACK */
 
-  /* --- Light Mode Footer Text Colors (ensure contrast on off-white) --- */
+  /* --- Light Mode Footer Text Colors --- */
   --ifm-footer-color: #02263C; /* PRUSSIAN BLUE for text */
   --ifm-footer-link-color: var(--ifm-color-primary); /* TANGERINE for links */
   --ifm-footer-title-color: #010D14; /* RICH BLACK for titles */
+
+  /* --- Other base variables --- */
+  --ifm-code-font-size: 95%;
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+  --ifm-font-family-base: 'neulis-sans', sans-serif;
 }
 
 /* Dark mode overrides */
 [data-theme='dark'] {
-  /* --- Dark Mode Background (Using Infima default dark grey/black) --- */
-  /* You could uncomment and set this to RICH BLACK if preferred: */
+  /* --- Dark Mode Background --- */
+  --ifm-background-color: #121212; /* Standard dark theme background */
+  /* Alternatively, use RICH BLACK: */
   /* --ifm-background-color: #010D14; */
+
+  /* --- Set Navbar/Footer background to match page background --- */
+  --ifm-navbar-background-color: var(--ifm-background-color);
+  --ifm-footer-background-color: var(--ifm-background-color);
 
   /* --- Primary color for Dark Mode (Active items) --- */
   --ifm-color-primary: #FD9E02; /* ORANGE PEEL */
   --ifm-menu-color-active: #FD9E02; /* ORANGE PEEL */
 
-  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
-
-  /* --- Dark Mode Navbar Text Colors (ensure contrast on dark background) --- */
+  /* --- Dark Mode Navbar Text Colors --- */
   --ifm-navbar-link-color: #FFFFFF; /* WHITE */
   --ifm-navbar-link-hover-color: var(--ifm-color-primary); /* ORANGE PEEL on hover */
   --ifm-navbar-link-active-color: var(--ifm-color-primary); /* ORANGE PEEL when active */
   --ifm-navbar-title-color: #FFFFFF; /* WHITE */
 
-  /* --- Dark Mode Footer Text Colors (ensure contrast on dark background) --- */
+  /* --- Dark Mode Footer Text Colors --- */
   --ifm-footer-color: #FFFFFF; /* WHITE for text */
   --ifm-footer-link-color: var(--ifm-color-primary); /* ORANGE PEEL for links */
   --ifm-footer-title-color: #FFFFFF; /* WHITE for titles */
+
+  /* --- Other dark mode base variables --- */
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
 }
 
 /* --- Heading Font Rule (Quicksand) --- */
 h1, h2, h3, h4, h5, h6 {
   --ifm-font-family-base: 'quicksand', sans-serif;
 }
+
+/* --- Apply Navbar background variable --- */
+.navbar {
+  background-color: var(--ifm-navbar-background-color);
+  /* Remove explicit box-shadow if you want seamless look */
+  box-shadow: none;
+  /* Add border if needed for separation */
+  /* border-bottom: 1px solid var(--ifm-color-emphasis-300); */
+}
+
+/* Apply Navbar text/link colors */
+.navbar__link { color: var(--ifm-navbar-link-color); }
+.navbar__link:hover { color: var(--ifm-navbar-link-hover-color); }
+.navbar__link--active { color: var(--ifm-navbar-link-active-color); }
+.navbar__brand, .navbar__title { color: var(--ifm-navbar-title-color); }
+
+/* --- Apply Footer background variable --- */
+.footer {
+  background-color: var(--ifm-footer-background-color);
+}
+
+/* Apply Footer text/link colors */
+.footer { color: var(--ifm-footer-color); }
+.footer__title { color: var(--ifm-footer-title-color); }
+.footer__link-item { color: var(--ifm-footer-link-color); }
+.footer__copyright { color: var(--ifm-footer-color); }
+
+/* --- IMPORTANT FONT CHECK --- */
+/* Double-check the exact font-family names ('neulis-sans', 'quicksand') */
+/* against what Adobe Fonts specifies. */
