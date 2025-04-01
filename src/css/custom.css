@@ -6,7 +6,7 @@
 
 /* You can override the default Infima variables here. */
 :root {
-  --ifm-color-primary: #2e8555;
+  --ifm-color-primary: #2e8555; /* Default Docusaurus green - Consider changing to a Blockport color later */
   --ifm-color-primary-dark: #29784c;
   --ifm-color-primary-darker: #277148;
   --ifm-color-primary-darkest: #205d3b;
@@ -15,11 +15,17 @@
   --ifm-color-primary-lightest: #3cad6e;
   --ifm-code-font-size: 95%;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+
+  /* --- ADDED FONT RULE --- */
+  /* Set Neulis Sans as the main body font */
+  /* Use the specific CSS name Adobe provides - check if 'neulis-sans' is correct */
+  --ifm-font-family-base: 'neulis-sans', sans-serif;
+  /* --- END ADDED FONT RULE --- */
 }
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
 [data-theme='dark'] {
-  --ifm-color-primary: #25c2a0;
+  --ifm-color-primary: #25c2a0; /* Default Docusaurus dark mode green - Consider changing later */
   --ifm-color-primary-dark: #21af90;
   --ifm-color-primary-darker: #1fa588;
   --ifm-color-primary-darkest: #1a8870;
@@ -27,4 +33,26 @@
   --ifm-color-primary-lighter: #32d8b4;
   --ifm-color-primary-lightest: #4fddbf;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+
+  /* You might want specific dark mode font overrides here if needed, */
+  /* but usually inheriting from :root is fine. */
 }
+
+/* --- ADDED HEADING FONT RULE --- */
+h1, h2, h3, h4, h5, h6 {
+  /* Set Quicksand for headings */
+  /* Use the specific CSS name Adobe provides - check if 'quicksand' is correct */
+  /* Using --ifm-font-family-base here overrides the root setting for headings */
+  --ifm-font-family-base: 'quicksand', sans-serif;
+  /* Alternatively, Docusaurus might use a specific headings variable: */
+  /* --ifm-font-family-headings: 'quicksand', sans-serif; */
+  /* Using --ifm-font-family-base is often sufficient initially */
+}
+/* --- END ADDED HEADING FONT RULE --- */
+
+
+/* --- IMPORTANT --- */
+/* Double-check the exact font-family names ('neulis-sans', 'quicksand') */
+/* against what Adobe Fonts specifies in its project or CSS file. */
+/* Sometimes names differ slightly (e.g., capitalization, hyphens). */
+/* Adjust the names above if necessary. */

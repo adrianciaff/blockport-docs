@@ -13,20 +13,17 @@ const config = {
   title: 'Blockport',
   tagline: 'Documentation for our Solana Validator',
   favicon: 'img/favicon.png',
-
-  // Set the production url of your site here
   url: 'https://docs.blockport.xyz',
-  // Set the /<baseUrl>/ pathname under which your site is served
-  // For GitHub pages deployment, it is often '/<projectName>/'
   baseUrl: '/',
-
-  // GitHub pages deployment config.
-  // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'Blockport', // Usually your GitHub org/user name.
-  projectName: 'blockport-docs', // Usually your repo name.
-
+  organizationName: 'Blockport',
+  projectName: 'blockport-docs',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
+
+  // *** ADD THIS ARRAY (or add the URL to the existing array) ***
+  stylesheets: [
+    'https://use.typekit.net/esv0mpp.css',
+  ],
 
   // Even if you don't use internationalization, you can use this field to set
   // useful metadata like html lang. For example, if your site is Chinese, you
