@@ -6,34 +6,50 @@
 
 /* You can override the default Infima variables here. */
 :root {
-  /* --- UPDATED Primary color for Light Mode (Active items) --- */
-  --ifm-color-primary: #FD9E02; /* ORANGE PEEL */
-  /* --- ADDED Menu active color override for Light Mode --- */
-  --ifm-menu-color-active: #FD9E02 /* ORANGE PEEL */
-
-  /* Define variants if needed, like: */
-  /* --ifm-color-primary-dark: #e07900; */
-  /* --ifm-color-primary-light: #ff9100; */
+  /* --- Primary color for Light Mode (Active items) --- */
+  --ifm-color-primary: #FB8500; /* TANGERINE */
+  --ifm-menu-color-active: #FB8500; /* TANGERINE */
 
   --ifm-code-font-size: 95%;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
 
   /* --- Font Rule (Neulis Sans default) --- */
   --ifm-font-family-base: 'neulis-sans', sans-serif;
+
+  /* --- Light Mode Navbar Specific Colors --- */
+  --ifm-navbar-background-color: #DEF0F7; /* AZURE */
+  --ifm-navbar-link-color: #02263C; /* PRUSSIAN BLUE for contrast */
+  --ifm-navbar-link-hover-color: var(--ifm-color-primary); /* Use primary Tangerine on hover */
+  --ifm-navbar-link-active-color: var(--ifm-color-primary); /* Use primary Tangerine when active */
+  --ifm-navbar-title-color: #010D14; /* RICH BLACK for contrast */
+
+  /* --- Light Mode Footer Specific Colors --- */
+  --ifm-footer-background-color: #DEF0F7; /* AZURE */
+  --ifm-footer-color: #02263C; /* PRUSSIAN BLUE for text */
+  --ifm-footer-link-color: var(--ifm-color-primary); /* Use primary Tangerine for links */
+  --ifm-footer-title-color: #010D14; /* RICH BLACK for titles */
 }
 
-/* For readability concerns, you should choose a lighter palette in dark mode. */
+/* Dark mode overrides */
 [data-theme='dark'] {
-  /* --- UPDATED Primary color for Dark Mode (Active items) --- */
+  /* --- Primary color for Dark Mode (Active items) --- */
   --ifm-color-primary: #FD9E02; /* ORANGE PEEL */
-  /* --- ADDED Menu active color override for Dark Mode --- */
   --ifm-menu-color-active: #FD9E02; /* ORANGE PEEL */
 
-  /* Define variants if needed, like: */
-  /* --ifm-color-primary-dark: #e38e02; */
-  /* --ifm-color-primary-light: #ffae02; */
-
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+
+  /* --- Dark Mode Navbar Specific Colors --- */
+  --ifm-navbar-background-color: #010D14; /* RICH BLACK */
+  --ifm-navbar-link-color: #FFFFFF; /* WHITE */
+  --ifm-navbar-link-hover-color: var(--ifm-color-primary); /* Use primary Orange Peel on hover */
+  --ifm-navbar-link-active-color: var(--ifm-color-primary); /* Use primary Orange Peel when active */
+  --ifm-navbar-title-color: #FFFFFF; /* WHITE */
+
+  /* --- Dark Mode Footer Specific Colors --- */
+  --ifm-footer-background-color: #010D14; /* RICH BLACK */
+  --ifm-footer-color: #FFFFFF; /* WHITE for text */
+  --ifm-footer-link-color: var(--ifm-color-primary); /* Use primary Orange Peel for links */
+  --ifm-footer-title-color: #FFFFFF; /* WHITE for titles */
 }
 
 /* --- Heading Font Rule (Quicksand) --- */
@@ -41,38 +57,40 @@ h1, h2, h3, h4, h5, h6 {
   --ifm-font-family-base: 'quicksand', sans-serif;
 }
 
-/* --- Navbar Styling --- */
+/* Apply the theme variables */
 .navbar {
-  background-color: #010D14; /* RICH BLACK */
+  background-color: var(--ifm-navbar-background-color);
 }
 .navbar__link {
-  color: var(--ifm-color-secondary-darkest); /* Start with a default grey */
+  color: var(--ifm-navbar-link-color);
 }
-/* Active navbar link should now use the updated --ifm-color-primary */
+.navbar__link:hover {
+  color: var(--ifm-navbar-link-hover-color);
+}
 .navbar__link--active {
-  color: var(--ifm-color-primary);
+  color: var(--ifm-navbar-link-active-color);
 }
 .navbar__brand, .navbar__title {
-   color: #FFFFFF; /* WHITE */
+   color: var(--ifm-navbar-title-color);
 }
 
-/* --- Footer Styling --- */
 .footer {
-  background-color: #010D14; /* RICH BLACK */
-  color: #FFFFFF; /* WHITE for base text */
+  background-color: var(--ifm-footer-background-color);
+  color: var(--ifm-footer-color);
 }
 .footer__title {
-  color: #FFFFFF; /* WHITE */
+  color: var(--ifm-footer-title-color);
 }
-/* Footer links using primary color */
 .footer__link-item {
-   color: var(--ifm-color-primary);
-   /* Or use AZURE #DEF0F7 */
-   /* color: #DEF0F7; */
+   color: var(--ifm-footer-link-color);
 }
 .footer__copyright {
-   color: #DEF0F7; /* AZURE for copyright */
+  /* Assuming copyright color should match footer text */
+   color: var(--ifm-footer-color);
+   /* Or make it slightly different if needed */
+   /* color: #DEF0F7; */ /* AZURE example from dark */
 }
+
 
 /* --- IMPORTANT FONT CHECK --- */
 /* Double-check the exact font-family names ('neulis-sans', 'quicksand') */
