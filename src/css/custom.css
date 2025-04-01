@@ -19,7 +19,7 @@
   /* --- ADDED FONT RULE --- */
   /* Set Neulis Sans as the main body font */
   /* Use the specific CSS name Adobe provides - check if 'neulis-sans' is correct */
-  --ifm-font-family-base: 'neulis-sans', sans-serif;
+  --ifm-font-family-base: 'Quicksand', sans-serif;
   /* --- END ADDED FONT RULE --- */
 }
 
