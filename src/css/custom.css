@@ -7,9 +7,9 @@
 /* You can override the default Infima variables here. */
 :root {
   /* --- UPDATED Primary color for Light Mode (Active items) --- */
-  --ifm-color-primary: #FB8500; /* TANGERINE */
+  --ifm-color-primary: #FD9E02; /* ORANGE PEEL */
   /* --- ADDED Menu active color override for Light Mode --- */
-  --ifm-menu-color-active: #FB8500; /* TANGERINE */
+  --ifm-menu-color-active: #FD9E02 /* ORANGE PEEL */
 
   /* Define variants if needed, like: */
   /* --ifm-color-primary-dark: #e07900; */
