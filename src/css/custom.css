@@ -6,26 +6,26 @@
 
  :root {
   /* --- Light Mode Background --- */
-  --ifm-background-color: #FAFAFA; /* Slightly off-white */
+  --ifm-background-color: #FAFAFA; /* Slightly off-white for page */
 
-  /* --- Set Navbar/Footer background to match page background --- */
-  --ifm-navbar-background-color: var(--ifm-background-color);
-  --ifm-footer-background-color: var(--ifm-background-color);
+  /* --- Light Mode Header/Footer Background (Slightly darker off-white) --- */
+  --ifm-navbar-background-color: #F0F0F0;
+  --ifm-footer-background-color: #F0F0F0;
 
   /* --- Primary color for Light Mode (Active items) --- */
   --ifm-color-primary: #FB8500; /* TANGERINE */
   --ifm-menu-color-active: #FB8500; /* TANGERINE */
 
-  /* --- Light Mode Navbar Text Colors --- */
+  /* --- Light Mode Navbar Text Colors (ensure contrast on #F0F0F0) --- */
   --ifm-navbar-link-color: #02263C; /* PRUSSIAN BLUE */
   --ifm-navbar-link-hover-color: var(--ifm-color-primary); /* TANGERINE on hover */
   --ifm-navbar-link-active-color: var(--ifm-color-primary); /* TANGERINE when active */
   --ifm-navbar-title-color: #010D14; /* RICH BLACK */
 
-  /* --- Light Mode Footer Text Colors --- */
-  --ifm-footer-color: #02263C; /* PRUSSIAN BLUE for text */
-  --ifm-footer-link-color: var(--ifm-color-primary); /* TANGERINE for links */
-  --ifm-footer-title-color: #010D14; /* RICH BLACK for titles */
+  /* --- MUTED Light Mode Footer Text Colors (ensure contrast on #F0F0F0) --- */
+  --ifm-footer-color: #606060; /* Medium Gray */
+  --ifm-footer-link-color: #606060; /* Medium Gray */
+  --ifm-footer-title-color: #606060; /* Medium Gray */
 
   /* --- Other base variables --- */
   --ifm-code-font-size: 95%;
@@ -37,27 +37,25 @@
 [data-theme='dark'] {
   /* --- Dark Mode Background --- */
   --ifm-background-color: #121212; /* Standard dark theme background */
-  /* Alternatively, use RICH BLACK: */
-  /* --ifm-background-color: #010D14; */
 
-  /* --- Set Navbar/Footer background to match page background --- */
-  --ifm-navbar-background-color: var(--ifm-background-color);
-  --ifm-footer-background-color: var(--ifm-background-color);
+  /* --- Dark Mode Header/Footer Background (RICH BLACK) --- */
+  --ifm-navbar-background-color: #010D14; /* RICH BLACK */
+  --ifm-footer-background-color: #010D14; /* RICH BLACK */
 
   /* --- Primary color for Dark Mode (Active items) --- */
   --ifm-color-primary: #FD9E02; /* ORANGE PEEL */
   --ifm-menu-color-active: #FD9E02; /* ORANGE PEEL */
 
-  /* --- Dark Mode Navbar Text Colors --- */
+  /* --- Dark Mode Navbar Text Colors (ensure contrast on RICH BLACK) --- */
   --ifm-navbar-link-color: #FFFFFF; /* WHITE */
   --ifm-navbar-link-hover-color: var(--ifm-color-primary); /* ORANGE PEEL on hover */
   --ifm-navbar-link-active-color: var(--ifm-color-primary); /* ORANGE PEEL when active */
   --ifm-navbar-title-color: #FFFFFF; /* WHITE */
 
-  /* --- Dark Mode Footer Text Colors --- */
-  --ifm-footer-color: #FFFFFF; /* WHITE for text */
-  --ifm-footer-link-color: var(--ifm-color-primary); /* ORANGE PEEL for links */
-  --ifm-footer-title-color: #FFFFFF; /* WHITE for titles */
+  /* --- MUTED Dark Mode Footer Text Colors (ensure contrast on RICH BLACK) --- */
+  --ifm-footer-color: #A0A0A0; /* Light Gray */
+  --ifm-footer-link-color: #A0A0A0; /* Light Gray */
+  --ifm-footer-title-color: #A0A0A0; /* Light Gray */
 
   /* --- Other dark mode base variables --- */
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
@@ -71,10 +69,7 @@ h1, h2, h3, h4, h5, h6 {
 /* --- Apply Navbar background variable --- */
 .navbar {
   background-color: var(--ifm-navbar-background-color);
-  /* Remove explicit box-shadow if you want seamless look */
-  box-shadow: none;
-  /* Add border if needed for separation */
-  /* border-bottom: 1px solid var(--ifm-color-emphasis-300); */
+  box-shadow: none; /* Remove shadow for seamless look if desired */
 }
 
 /* Apply Navbar text/link colors */
@@ -92,7 +87,13 @@ h1, h2, h3, h4, h5, h6 {
 .footer { color: var(--ifm-footer-color); }
 .footer__title { color: var(--ifm-footer-title-color); }
 .footer__link-item { color: var(--ifm-footer-link-color); }
-.footer__copyright { color: var(--ifm-footer-color); }
+
+/* --- UPDATED Footer Copyright Styling --- */
+.footer__copyright {
+  color: var(--ifm-footer-color); /* Inherit muted color */
+  margin-top: 3em; /* Increased space above copyright */
+  font-size: 0.9em; /* Slightly smaller font size */
+}
 
 /* --- IMPORTANT FONT CHECK --- */
 /* Double-check the exact font-family names ('neulis-sans', 'quicksand') */
