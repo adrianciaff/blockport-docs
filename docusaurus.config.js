@@ -73,7 +73,7 @@ const config = {
       // Replace with your project's social card
       image: 'img/docusaurus-social-card.jpg', // Consider creating a social card image for blockport
       navbar: {
-        title: 'My Site', // You might want to change this title
+        title: 'Blockport', // You might want to change this title
         logo: {
           alt: 'Blockport Logo', // Or more descriptive alt text
           src: 'img/blockport_logo_black.png', // <-- Black logo for light mode
@@ -115,13 +115,13 @@ const config = {
           {
             title: 'Community', // Update community links if needed
             items: [
+             // {
+             //   label: 'Stack Overflow',
+             //   href: 'https://stackoverflow.com/questions/tagged/docusaurus', // Update or remove
+             // },
               {
-                label: 'Stack Overflow',
-                href: 'https://stackoverflow.com/questions/tagged/docusaurus', // Update or remove
-              },
-              {
-                label: 'Discord',
-                href: 'https://discordapp.com/invite/docusaurus', // Update or remove
+                label: 'Telegram',
+                href: 'https://t.me/+GoiXjMRh1042MTQ1', // Update or remove
               },
               {
                 label: 'X',
@@ -138,15 +138,15 @@ const config = {
                 to: '/blog',
               },
               // Update GitHub link
-              {
-                label: 'GitHub',
-                href: 'https://github.com/adrianciaff/blockport-docs', // Example: Changed to your repo
-              },
+              // {
+              //  label: 'GitHub',
+              //  href: 'https://github.com/adrianciaff/blockport-docs', // Example: Changed to your repo
+              //},
             ],
           },
         ],
         // Update copyright text
-        copyright: `Copyright © ${new Date().getFullYear()} Blockport. Built with Docusaurus.`,
+        copyright: `Copyright © ${new Date().getFullYear()} Blockport.`,
       },
       // *** Added colorMode configuration ***
       colorMode: {
