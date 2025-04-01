@@ -46,7 +46,7 @@ const config = {
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/', // Consider updating this later to your actual repo
         },
         blog: {
           showReadingTime: true,
@@ -57,7 +57,7 @@ const config = {
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/', // Consider updating this later to your actual repo
           // Useful options to enforce blogging best practices
           onInlineTags: 'warn',
           onInlineAuthors: 'warn',
@@ -74,23 +74,25 @@ const config = {
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       // Replace with your project's social card
-      image: 'img/docusaurus-social-card.jpg',
+      image: 'img/docusaurus-social-card.jpg', // Consider creating a social card image for blockport
       navbar: {
-        title: 'My Site',
+        title: 'My Site', // You might want to change this title
         logo: {
-          alt: 'My Site Logo',
-          src: 'img/logo.svg',
+          alt: 'My Site Logo', // Update alt text
+          src: 'img/logo.svg', // Update logo path if needed
         },
         items: [
           {
             type: 'docSidebar',
-            sidebarId: 'tutorialSidebar',
+            sidebarId: 'tutorialSidebar', // Ensure this matches your sidebar file name if default 'docs' sidebar is used
             position: 'left',
-            label: 'Tutorial',
+            label: 'Docs', // Changed from 'Tutorial'
           },
+          // Consider removing or updating the blog link if you don't plan to use it
           {to: '/blog', label: 'Blog', position: 'left'},
+          // Update GitHub link to your project's repository
           {
-            href: 'https://github.com/facebook/docusaurus',
+            href: 'https://github.com/adrianciaff/blockport-docs', // Example: Changed to your repo based on logs
             label: 'GitHub',
             position: 'right',
           },
@@ -103,44 +105,58 @@ const config = {
             title: 'Docs',
             items: [
               {
-                label: 'Tutorial',
+                label: 'Introduction', // Changed label
                 to: '/docs/introduction',
+              },
+              {
+                label: 'FAQ', // Added FAQ link
+                to: '/docs/faq',
               },
             ],
           },
           {
-            title: 'Community',
+            title: 'Community', // Update community links if needed
             items: [
               {
                 label: 'Stack Overflow',
-                href: 'https://stackoverflow.com/questions/tagged/docusaurus',
+                href: 'https://stackoverflow.com/questions/tagged/docusaurus', // Update or remove
               },
               {
                 label: 'Discord',
-                href: 'https://discordapp.com/invite/docusaurus',
+                href: 'https://discordapp.com/invite/docusaurus', // Update or remove
               },
               {
                 label: 'X',
-                href: 'https://x.com/docusaurus',
+                href: 'https://x.com/docusaurus', // Update or remove
               },
             ],
           },
           {
             title: 'More',
             items: [
+              // Consider removing blog link if unused
               {
                 label: 'Blog',
                 to: '/blog',
               },
+              // Update GitHub link
               {
                 label: 'GitHub',
-                href: 'https://github.com/facebook/docusaurus',
+                href: 'https://github.com/adrianciaff/blockport-docs', // Example: Changed to your repo
               },
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
+        // Update copyright text
+        copyright: `Copyright © ${new Date().getFullYear()} Blockport. Built with Docusaurus.`,
       },
+      // *** Added colorMode configuration ***
+      colorMode: {
+        defaultMode: 'light',
+        disableSwitch: false,
+        respectPrefersColorScheme: true, // Respects user's OS preference
+      },
+      // *** Prism configuration (already present, ensure it's correct) ***
       prism: {
         theme: prismThemes.github,
         darkTheme: prismThemes.dracula,
