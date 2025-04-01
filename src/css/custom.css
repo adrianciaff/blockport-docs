@@ -43,7 +43,7 @@ h1, h2, h3, h4, h5, h6 {
   /* Set Quicksand for headings */
   /* Use the specific CSS name Adobe provides - check if 'quicksand' is correct */
   /* Using --ifm-font-family-base here overrides the root setting for headings */
-  --ifm-font-family-base: 'quicksand', sans-serif;
+  --ifm-font-family-base: 'neulis-sans', sans-serif;
   /* Alternatively, Docusaurus might use a specific headings variable: */
   /* --ifm-font-family-headings: 'quicksand', sans-serif; */
   /* Using --ifm-font-family-base is often sufficient initially */
