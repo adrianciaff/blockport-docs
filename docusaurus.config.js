@@ -75,8 +75,9 @@ const config = {
       navbar: {
         title: 'My Site', // You might want to change this title
         logo: {
-          alt: 'My Site Logo', // Update alt text
-          src: 'img/logo.svg', // Update logo path if needed
+          alt: 'Blockport Logo', // Or more descriptive alt text
+          src: 'img/blockport_logo_black.png', // <-- Black logo for light mode
+          srcDark: 'img/blockport_logo_white.png', // <-- White logo for dark mode
         },
         items: [
           {

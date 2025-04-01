@@ -3,19 +3,11 @@ sidebar_position: 1
 title: Introduction
 ---
 
-# Welcome to the Blockport Documentation
-
-This documentation provides detailed information about Blockport's services, technical principles, and how to integrate or utilize our infrastructure.
-
-Our mission is to provide **reliable, high-performance foundational infrastructure** for Solana builders, DeFi protocols, and stakers.
-
-## Our Services
-
 ### High-Performance Validator
 
-Blockport operates a top-tier Solana validator designed for maximum uptime, security, and performance. We offer:
+Blockport operates a top-performing Solana validator designed for maximum uptime, security, and performance. We offer:
 
-* **Competitive Staking:** Benefit from our **0% inflation commission** and **8% MEV commission** structure (public rate).
+* **Zero Commissions:** Benefit from **0% commissions** on inflation rewards.
 * **Proven Reliability:** Backed by over 3 years of continuous operation with a 99.9% uptime record.
 
 **Resources:**
