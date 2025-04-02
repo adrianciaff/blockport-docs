@@ -35,6 +35,9 @@
 
   /* --- Define max-width for layout container --- */
   --ifm-container-width-xl: 1440px; /* Wider layout */
+
+  /* --- Define standard padding --- */
+  --standard-internal-padding: 1.5rem;
 }
 
 /* Dark mode overrides */
@@ -122,20 +125,31 @@ h1, h2, h3, h4, h5, h6 {
 .navbar__inner {
   max-width: var(--ifm-container-width-xl);
   margin: 0 auto;
-  padding-left: 1.5rem; /* Internal padding */
-  padding-right: 1.5rem;
+  padding-left: var(--standard-internal-padding);
+  padding-right: var(--standard-internal-padding);
   width: 100%;
+  box-sizing: border-box; /* Include padding in width calculation */
 }
 
-/* --- UPDATED: Center Footer Inner Content --- */
-/* Target specific container class found in footer */
-.footer .container-fluid { /* <-- UPDATED SELECTOR */
-  max-width: var(--ifm-container-width-xl); /* Match overall width */
-  margin-left: auto;
-  margin-right: auto;
-  padding-left: 1.5rem; /* Match internal padding */
-  padding-right: 1.5rem;
-  width: 100%;
+/* --- UPDATED: Align Footer Content using Sidebar Width --- */
+.footer .container-fluid {
+  max-width: var(--ifm-container-width-xl); /* Optional: limit width */
+  margin-left: 0; /* Align left relative to parent */
+  margin-right: 0;
+  /* Set left padding based on sidebar width + standard padding */
+  /* Assumes --doc-sidebar-width is available */
+  padding-left: calc(var(--doc-sidebar-width, 300px) + var(--standard-internal-padding));
+  padding-right: var(--standard-internal-padding); /* Standard padding on right */
+  width: auto; /* Let width be determined by parent and padding */
+  box-sizing: border-box;
+}
+
+/* Fallback if --doc-sidebar-width isn't defined or for non-doc pages */
+/* You might need to adjust selectors for non-doc pages if footer appears there */
+html:not(.docs-wrapper) .footer .container-fluid {
+   padding-left: var(--standard-internal-padding);
+   /* Or center it on non-doc pages if desired */
+   /* margin-left: auto; margin-right: auto; */
 }
 
 
