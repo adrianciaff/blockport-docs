@@ -28,12 +28,19 @@
   --ifm-footer-link-color: #606060;
   --ifm-footer-title-color: #606060;
 
+  /* --- Light Mode Form Input Colors --- */
+  --form-input-background: #FFFFFF; /* White background for inputs */
+  --form-input-border-color: #CCCCCC; /* Light gray border */
+  --form-input-text-color: #010D14; /* Dark text */
+  --form-input-focus-border-color: var(--ifm-color-primary); /* Orange border on focus */
+
   /* --- Other base variables --- */
   --ifm-code-font-size: 95%;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
   --ifm-font-family-base: 'neulis-sans', sans-serif;
   --ifm-container-width-xl: 1440px; /* Wider layout */
   --standard-internal-padding: 1.5rem;
+  --ifm-global-radius: 4px; /* Base border radius */
 }
 
 /* Dark mode overrides */
@@ -61,6 +68,12 @@ html[data-theme='dark'] {
   --ifm-footer-color: #A0A0A0; /* Light Gray */
   --ifm-footer-link-color: #A0A0A0;
   --ifm-footer-title-color: #A0A0A0;
+
+  /* --- Dark Mode Form Input Colors --- */
+  --form-input-background: #242526; /* Dark surface color */
+  --form-input-border-color: #444444; /* Darker gray border */
+  --form-input-text-color: #E3E3E3; /* Light text */
+  --form-input-focus-border-color: var(--ifm-color-primary); /* Orange border on focus */
 
   /* --- Other dark mode base variables --- */
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
@@ -132,16 +145,91 @@ h1, h2, h3, h4, h5, h6 {
   max-width: var(--ifm-container-width-xl);
   margin-left: 0;
   margin-right: 0;
-  /* Add MORE padding inside the calculation */
-  padding-left: calc(var(--doc-sidebar-width, 300px) + var(--standard-internal-padding) + 7rem); /* <-- Added + 1.5rem */
+  padding-left: calc(var(--doc-sidebar-width, 300px) + var(--standard-internal-padding) + 1.5rem);
   padding-right: var(--standard-internal-padding);
   width: auto;
   box-sizing: border-box;
 }
-
 /* Fallback for non-doc pages */
 html:not(.docs-wrapper) .footer .container-fluid {
    padding-left: var(--standard-internal-padding);
+}
+
+/* --- ADDED FORM STYLING --- */
+/* Target the form within the main markdown content area */
+.markdown form {
+  max-width: 720px; /* Limit form width for readability */
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.markdown form div {
+  margin-bottom: 1rem; /* Space below each form group */
+}
+
+.markdown form label {
+  display: block; /* Make labels block elements */
+  font-weight: bold;
+  margin-bottom: 0.5rem; /* Space between label and input */
+  color: var(--ifm-color-content); /* Use standard content color */
+  font-family: var(--ifm-font-family-base); /* Ensure correct font */
+}
+
+.markdown form input[type="text"],
+.markdown form input[type="email"],
+.markdown form textarea {
+  display: block; /* Ensure they take full width */
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid var(--form-input-border-color);
+  border-radius: var(--ifm-global-radius);
+  background-color: var(--form-input-background);
+  color: var(--form-input-text-color);
+  font-size: 1rem; /* Reset font size */
+  font-family: var(--ifm-font-family-base); /* Ensure correct font */
+  box-sizing: border-box; /* Include padding/border in width */
+  transition: border-color 0.2s ease-in-out; /* Smooth focus transition */
+}
+
+.markdown form textarea {
+  min-height: 150px; /* Give textarea more height */
+  resize: vertical; /* Allow vertical resize */
+}
+
+.markdown form input[type="text"]:focus,
+.markdown form input[type="email"]:focus,
+.markdown form textarea:focus {
+  outline: none; /* Remove default browser outline */
+  border-color: var(--form-input-focus-border-color); /* Highlight with primary color */
+  /* Optional: add subtle box-shadow */
+  /* box-shadow: 0 0 0 2px rgba(var(--ifm-color-primary-rgb), 0.2); */
+}
+
+.markdown form button[type="submit"] {
+  /* Basic button styling - matches Docusaurus button */
+  display: inline-block;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  border-radius: var(--ifm-global-radius);
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  border: none; /* Remove default border */
+  transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out; /* Smooth hover transition */
+
+  /* Use primary colors */
+  background-color: var(--ifm-color-primary);
+  color: #FFFFFF; /* Assuming primary color contrasts with white */
+
+  /* Add hover effect */
+}
+
+.markdown form button[type="submit"]:hover {
+  /* Slightly darken/lighten primary on hover */
+  /* You might need --ifm-color-primary-dark/light variables defined */
+  /* background-color: var(--ifm-color-primary-dark); */
+  opacity: 0.9; /* Simple opacity hover */
 }
 
 
