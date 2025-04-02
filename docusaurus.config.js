@@ -88,12 +88,7 @@ const config = {
           },
           // Consider removing or updating the blog link if you don't plan to use it
           {to: '/blog', label: 'Blog', position: 'left'},
-          // Update GitHub link to your project's repository
-          {
-            href: 'https://github.com/adrianciaff/blockport-docs', // Example: Changed to your repo based on logs
-            label: 'GitHub',
-            position: 'right',
-          },
+
         ],
       },
       footer: {

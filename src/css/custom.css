@@ -127,10 +127,9 @@ h1, h2, h3, h4, h5, h6 {
   width: 100%;
 }
 
-/* --- ADDED: Center Footer Inner Content --- */
-/* Common footer structure uses a .container class inside */
-/* If this doesn't work, inspect the footer and find the correct selector */
-.footer .container {
+/* --- UPDATED: Center Footer Inner Content --- */
+/* Target specific container class found in footer */
+.footer .container-fluid { /* <-- UPDATED SELECTOR */
   max-width: var(--ifm-container-width-xl); /* Match overall width */
   margin-left: auto;
   margin-right: auto;
