@@ -151,4 +151,72 @@ h1, h2, h3, h4, h5, h6 {
 .footer .container-fluid {
   max-width: var(--ifm-container-width-xl);
   margin-left: 0;
-  margin-right:
+  margin-right: 0;
+  padding-left: calc(var(--doc-sidebar-width, 300px) + var(--standard-internal-padding) + 1.5rem);
+  padding-right: var(--standard-internal-padding);
+  width: auto;
+  box-sizing: border-box;
+}
+/* Fallback for non-doc pages */
+html:not(.docs-wrapper) .footer .container-fluid {
+   padding-left: var(--standard-internal-padding);
+}
+
+/* --- Form Styling (Kept from previous step) --- */
+.markdown form { max-width: 720px; margin-top: 2rem; margin-bottom: 2rem; }
+.markdown form div { margin-bottom: 1rem; }
+.markdown form label { display: block; font-weight: bold; margin-bottom: 0.5rem; color: var(--ifm-color-content); font-family: var(--ifm-font-family-base); }
+.markdown form input[type="text"],
+.markdown form input[type="email"],
+.markdown form textarea { display: block; width: 100%; padding: 0.75rem; border: 1px solid var(--form-input-border-color); border-radius: var(--ifm-global-radius); background-color: var(--form-input-background); color: var(--form-input-text-color); font-size: 1rem; font-family: var(--ifm-font-family-base); box-sizing: border-box; transition: border-color 0.2s ease-in-out; }
+.markdown form textarea { min-height: 150px; resize: vertical; }
+.markdown form input[type="text"]:focus,
+.markdown form input[type="email"]:focus,
+.markdown form textarea:focus { outline: none; border-color: var(--form-input-focus-border-color); }
+.markdown form button[type="submit"] { display: inline-block; font-weight: bold; text-align: center; text-decoration: none; cursor: pointer; border-radius: var(--ifm-global-radius); padding: 0.75rem 1.5rem; font-size: 1rem; border: none; transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out; background-color: var(--ifm-color-primary); color: #FFFFFF; }
+.markdown form button[type="submit"]:hover { opacity: 0.9; }
+
+
+/* --- UPDATED FAQ Accordion Styling --- */
+
+/* Style the clickable question part */
+.markdown details > summary {
+  cursor: pointer;
+  padding: 0.75rem 0.5rem;
+  font-weight: bold;
+  /* list-style: none; /* REMOVED - Allow default marker */
+  margin-bottom: 0.5rem;
+  border-bottom: 1px solid var(--ifm-color-emphasis-300);
+  transition: background-color 0.2s ease;
+}
+.markdown details > summary:hover {
+  background-color: var(--ifm-hover-overlay);
+}
+
+/* REMOVED custom marker rules */
+/* .markdown details > summary::-webkit-details-marker { display: none; } */
+/* .markdown details > summary::before { ... } */
+/* .markdown details[open] > summary::before { ... } */
+
+
+/* Style the expanded content area */
+.markdown details[open] {
+  padding: 1rem;
+  padding-top: 0.5rem;
+  margin-bottom: 1rem;
+  border-radius: var(--ifm-global-radius);
+  border: 1px solid var(--ifm-color-emphasis-300);
+  border-top: none;
+  /* Apply theme-aware SOLID background (matches form inputs) */
+  background-color: var(--faq-accordion-bg); /* Variable defined in :root and [data-theme='dark'] */
+}
+
+/* Ensure content inside has normal color */
+.markdown details[open] > *:not(summary) {
+   color: var(--ifm-color-content);
+}
+
+
+/* --- IMPORTANT FONT CHECK --- */
+/* Double-check the exact font-family names ('neulis-sans', 'quicksand') */
+/* against what Adobe Fonts specifies. */
