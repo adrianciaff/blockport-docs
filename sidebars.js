@@ -18,7 +18,7 @@
   tutorialSidebar: [
     'introduction', // Existing page
     'faq',          // Existing page
-    'form',         // <-- ADD THIS LINE (using the filename 'form')
+    'Contact',         // <-- ADD THIS LINE (using the filename 'form')
   ],
   // ... other sidebars if they exist ...
 };
