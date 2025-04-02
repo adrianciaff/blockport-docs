@@ -85,7 +85,6 @@ html[data-theme='dark'] {
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
 
   /* --- Overwrite default gray emphasis colors --- */
-  /* (Kept from previous step) */
   --ifm-color-emphasis-0: #000000;
   --ifm-color-emphasis-100: #1a1a1a;
   --ifm-color-emphasis-200: #333333;
@@ -184,7 +183,7 @@ html:not(.docs-wrapper) .footer .container-fluid {
   cursor: pointer;
   padding: 0.75rem 0.5rem;
   font-weight: bold;
-  /* list-style: none; /* REMOVED - Allow default marker */
+  list-style-type: none; /* Hide default marker */
   margin-bottom: 0.5rem;
   border-bottom: 1px solid var(--ifm-color-emphasis-300);
   transition: background-color 0.2s ease;
@@ -193,11 +192,10 @@ html:not(.docs-wrapper) .footer .container-fluid {
   background-color: var(--ifm-hover-overlay);
 }
 
-/* REMOVED custom marker rules */
-/* .markdown details > summary::-webkit-details-marker { display: none; } */
-/* .markdown details > summary::before { ... } */
-/* .markdown details[open] > summary::before { ... } */
-
+/* Hide default marker for Webkit browsers (redundant but safe) */
+.markdown details > summary::-webkit-details-marker {
+  display: none;
+}
 
 /* Style the expanded content area */
 .markdown details[open] {
@@ -207,8 +205,8 @@ html:not(.docs-wrapper) .footer .container-fluid {
   border-radius: var(--ifm-global-radius);
   border: 1px solid var(--ifm-color-emphasis-300);
   border-top: none;
-  /* Apply theme-aware SOLID background (matches form inputs) */
-  background-color: var(--faq-accordion-bg); /* Variable defined in :root and [data-theme='dark'] */
+  /* Apply theme-aware SOLID background with !important */
+  background-color: var(--faq-accordion-bg) !important; /* Force override */
 }
 
 /* Ensure content inside has normal color */
