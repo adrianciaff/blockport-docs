@@ -118,7 +118,7 @@ const config = {
               },
               {
                 label: 'X',
-                href: 'https://x.com/docusaurus', // Update or remove
+                href: 'https://x.com/blockportxyz', // Update or remove
               },
             ],
           },
