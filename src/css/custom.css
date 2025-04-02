@@ -133,7 +133,7 @@ h1, h2, h3, h4, h5, h6 {
   margin-left: 0;
   margin-right: 0;
   /* Add MORE padding inside the calculation */
-  padding-left: calc(var(--doc-sidebar-width, 300px) + var(--standard-internal-padding) + 1.5rem); /* <-- Added + 1.5rem */
+  padding-left: calc(var(--doc-sidebar-width, 300px) + var(--standard-internal-padding) + 2rem); /* <-- Added + 1.5rem */
   padding-right: var(--standard-internal-padding);
   width: auto;
   box-sizing: border-box;
