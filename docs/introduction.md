@@ -23,8 +23,8 @@ Blockport operates a top-performing Solana validator designed for maximum uptime
 This documentation site is structured to help you find the information you need quickly:
 
 * [FAQ](https://docs.blockport.xyz/docs/faq) - Learn about our rebrand from Zeta Node to Blockport. 
-* [Validator Overview]() - Information on historical performance, security, and team.
-* [Hardware Specifications]() - Detailed hardware and locations.
+* [Validator Overview](https://docs.blockport.xyz/docs/overview) - Information on historical performance, security, and team.
+* [Hardware Specifications](https://docs.blockport.xyz/docs/hardware) - Detailed hardware and locations.
 * [Book a call](https://docs.blockport.xyz/docs/Contact) - Contact details for assistance with staking and support inquiries.
 
 Use the navigation menu to explore these sections.
