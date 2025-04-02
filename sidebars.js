@@ -16,9 +16,11 @@
  */
  const sidebars = {
   tutorialSidebar: [
-    'introduction', // Existing page
-    'faq',          // Existing page
-    'Contact',         // <-- ADD THIS LINE (using the filename 'form')
+    'introduction',
+    'overview',
+    'hardware',
+    'faq',
+    'Contact',
   ],
   // ... other sidebars if they exist ...
 };
