@@ -183,7 +183,7 @@ html:not(.docs-wrapper) .footer .container-fluid {
   cursor: pointer;
   padding: 0.75rem 0.5rem;
   font-weight: bold;
-  list-style-type: none; /* Hide default marker */
+  list-style-type: none; /* Hide default marker (Standard) */
   margin-bottom: 0.5rem;
   border-bottom: 1px solid var(--ifm-color-emphasis-300);
   transition: background-color 0.2s ease;
@@ -192,12 +192,22 @@ html:not(.docs-wrapper) .footer .container-fluid {
   background-color: var(--ifm-hover-overlay);
 }
 
-/* Hide default marker for Webkit browsers (redundant but safe) */
+/* Hide default marker for Webkit browsers */
 .markdown details > summary::-webkit-details-marker {
   display: none;
 }
 
+/* --- ADDED: Hide default marker for Firefox/other browsers --- */
+.markdown details > summary::marker {
+  display: none;
+  content: ""; /* Also try setting content to empty */
+  font-size: 0; /* Try reducing font size */
+}
+/* --- END ADDED RULE --- */
+
+
 /* Style the expanded content area */
+/* ... (rest of accordion styles remain the same) ... */
 .markdown details[open] {
   padding: 1rem;
   padding-top: 0.5rem;
@@ -205,16 +215,9 @@ html:not(.docs-wrapper) .footer .container-fluid {
   border-radius: var(--ifm-global-radius);
   border: 1px solid var(--ifm-color-emphasis-300);
   border-top: none;
-  /* Apply theme-aware SOLID background with !important */
-  background-color: var(--faq-accordion-bg) !important; /* Force override */
+  background-color: var(--faq-accordion-bg) !important;
 }
-
 /* Ensure content inside has normal color */
 .markdown details[open] > *:not(summary) {
    color: var(--ifm-color-content);
 }
-
-
-/* --- IMPORTANT FONT CHECK --- */
-/* Double-check the exact font-family names ('neulis-sans', 'quicksand') */
-/* against what Adobe Fonts specifies. */
