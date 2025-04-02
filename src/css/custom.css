@@ -10,7 +10,7 @@
 
   /* --- Light Mode Header/Footer Background --- */
   --ifm-navbar-background-color: #F0F0F0; /* Slightly darker off-white */
-  --ifm-footer-background-color: #F0F0F0; /* Slightly darker off-white */
+  --ifm-footer-background-color: #F0F0F0;
 
   /* --- Primary color for Light Mode (Active items) --- */
   --ifm-color-primary: #FB8500; /* TANGERINE */
@@ -31,6 +31,9 @@
   --ifm-code-font-size: 95%;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
   --ifm-font-family-base: 'neulis-sans', sans-serif;
+
+  /* --- Define max-width for layout container --- */
+  --ifm-container-width-xl: 1280px; /* Adjust max width as desired */
 }
 
 /* Dark mode overrides */
@@ -39,7 +42,7 @@
   --ifm-background-color: #010D14; /* RICH BLACK */
 
   /* --- Dark Mode Header/Footer Background (Slightly lighter) --- */
-  --dark-secondary-background: #111D24; /* Define lighter dark */
+  --dark-secondary-background: #111D24;
   --ifm-navbar-background-color: var(--dark-secondary-background);
   --ifm-footer-background-color: var(--dark-secondary-background);
 
@@ -47,19 +50,24 @@
   --ifm-color-primary: #FD9E02; /* ORANGE PEEL */
   --ifm-menu-color-active: #FD9E02; /* ORANGE PEEL */
 
-  /* --- Dark Mode Navbar Text Colors (ensure contrast on #111D24) --- */
+  /* --- Dark Mode Navbar Text Colors --- */
   --ifm-navbar-link-color: #FFFFFF; /* WHITE */
   --ifm-navbar-link-hover-color: var(--ifm-color-primary);
   --ifm-navbar-link-active-color: var(--ifm-color-primary);
   --ifm-navbar-title-color: #FFFFFF; /* WHITE */
 
-  /* --- Dark Mode Footer Text Colors (Muted - ensure contrast on #111D24) --- */
+  /* --- Dark Mode Footer Text Colors (Muted) --- */
   --ifm-footer-color: #A0A0A0; /* Light Gray */
   --ifm-footer-link-color: #A0A0A0;
   --ifm-footer-title-color: #A0A0A0;
 
   /* --- Other dark mode base variables --- */
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+}
+
+/* --- Explicitly set body background for dark mode --- */
+[data-theme='dark'] body {
+  background-color: var(--ifm-background-color);
 }
 
 /* --- Heading Font Rule (Quicksand) --- */
@@ -70,7 +78,7 @@ h1, h2, h3, h4, h5, h6 {
 /* --- Apply Navbar background variable --- */
 .navbar {
   background-color: var(--ifm-navbar-background-color);
-  box-shadow: none; /* Remove shadow for seamless look if desired */
+  box-shadow: none;
 }
 
 /* Apply Navbar text/link colors */
@@ -94,24 +102,26 @@ h1, h2, h3, h4, h5, h6 {
   font-size: 0.9em;
 }
 
-/* --- ADDED Layout Padding --- */
-.navbar__inner,
-main.main-wrapper .container, /* Target common main content container structure */
-main[class*='docPage_'] .container /* Target typical doc page container */
- {
-  /* Adjust padding value as needed */
-  padding-left: 3rem;
-  padding-right: 3rem; /* Added for symmetry */
-}
+/* --- UPDATED Layout Centering & Padding --- */
+/* Remove previous specific padding */
+/* .navbar__inner, main.main-wrapper .container, main[class*='docPage_'] .container { padding-left: 0; padding-right: 0; } */
 
-/* Optional: Ensure main content container respects max-width for centering */
-/* This might already be handled by Docusaurus defaults */
-main.main-wrapper .container,
-main[class*='docPage_'] .container {
-  max-width: var(--ifm-container-width, 1140px); /* Use Infima variable or set fixed value */
+/* Target the main container holding navbar/sidebar/content */
+/* This selector might need adjustment based on theme structure */
+/* Try inspecting the element just inside #__docusaurus */
+div[class*='Layout_'] > div {
+  max-width: var(--ifm-container-width-xl); /* Use variable defined in :root */
   margin-left: auto;
   margin-right: auto;
-  width: 100%; /* Ensure it takes full width up to max-width */
+  padding-left: 1.5rem; /* Add some padding inside the container */
+  padding-right: 1.5rem; /* Add some padding inside the container */
+}
+
+/* Ensure navbar content still aligns */
+.navbar__inner {
+  max-width: none; /* Allow navbar inner to fill the container */
+  margin: 0; /* Reset margin if any */
+  padding: 0; /* Reset padding, handled by parent now */
 }
 
 
