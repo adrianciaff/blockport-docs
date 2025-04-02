@@ -70,7 +70,7 @@ const config = {
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       // Replace with your project's social card
-      image: 'img/docusaurus-social-card.jpg', // Consider creating a social card image for blockport
+      image: 'img/docs-v1.jpg', // Consider creating a social card image for blockport
       navbar: {
         title: 'Blockport', // You might want to change this title
         logo: {
@@ -143,7 +143,7 @@ const config = {
       },
       // *** Added colorMode configuration ***
       colorMode: {
-        defaultMode: 'light',
+        defaultMode: 'dark',
         disableSwitch: false,
         respectPrefersColorScheme: true, // Respects user's OS preference
       },
