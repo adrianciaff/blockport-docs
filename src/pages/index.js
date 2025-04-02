@@ -1,21 +1,17 @@
 import React from 'react';
 import useBaseUrl from '@docusaurus/useBaseUrl';
-import Head from '@docusaurus/Head'; // For title/metadata
-import Root from '@theme/Root'; // *** IMPORT Root PROVIDER ***
-import ThemedImage from '@theme/ThemedImage'; // For theme-aware images
+import Head from '@docusaurus/Head';
+import Root from '@theme/Root'; // Keep Root!
 
 export default function MinimalLandingPage() {
-  const logoLight = useBaseUrl('/img/blockport_logo_black.png');
-  const logoDark = useBaseUrl('/img/blockport_logo_white.png');
+  // Point to just one logo version for this test
+  const logoUrl = useBaseUrl('/img/blockport_logo_black.png'); // Use black logo
 
   return (
-    // *** WRAP everything in <Root> ***
     <Root>
       <Head>
         <title>Blockport | Coming Soon</title>
         <meta name="description" content="Blockport Validator - Landing page coming soon" />
-        {/* Prevent indexing this placeholder page if desired */}
-        {/* <meta name="robots" content="noindex, nofollow" /> */}
       </Head>
       <div
         style={{
@@ -25,20 +21,18 @@ export default function MinimalLandingPage() {
           alignItems: 'center',
           minHeight: '100vh',
           textAlign: 'center',
-          // Background color comes from CSS variables set by Root/theme
         }}>
-        <ThemedImage
+        {/* *** Use a simple img tag instead of ThemedImage *** */}
+        <img
           alt="Blockport Logo"
-          sources={{
-            light: logoLight,
-            dark: logoDark,
-          }}
+          src={logoUrl}
           width="150"
+          style={{ marginBottom: '1rem' }} // Add some space below logo
         />
-        <p style={{ marginTop: '1rem', fontSize: '1.1rem' }}>
+        <p style={{ fontSize: '1.1rem' }}>
           Landing page coming soon
         </p>
       </div>
-    </Root> // *** END <Root> WRAPPER ***
+    </Root>
   );
 }
