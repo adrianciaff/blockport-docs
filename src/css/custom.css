@@ -244,3 +244,66 @@ html[data-theme='dark'] .minimal-landing-logo .logo-dark-mode {
 html[data-theme='dark'] .minimal-landing-logo .logo-light-mode {
   display: none; /* Hide light logo ONLY in dark mode */
 }
+
+/* --- FAQ Accordion Styling --- */
+
+/* Style the clickable question part */
+.markdown details > summary {
+  cursor: pointer;
+  padding: 0.75rem 0.5rem;
+  font-weight: bold;
+  list-style: none; /* Remove default triangle/marker in some browsers */
+  margin-bottom: 0.5rem; /* Space below summary when closed */
+  border-bottom: 1px solid var(--ifm-color-emphasis-300); /* Subtle separator */
+  transition: background-color 0.2s ease; /* Smooth hover */
+}
+.markdown details > summary:hover {
+  background-color: var(--ifm-hover-overlay); /* Use theme hover */
+}
+
+/* Remove default marker for Webkit browsers */
+.markdown details > summary::-webkit-details-marker {
+  display: none;
+}
+
+/* Add a custom marker (optional) */
+.markdown details > summary::before {
+  content: '► '; /* Collapsed state */
+  display: inline-block;
+  margin-right: 0.5rem;
+  transition: transform 0.2s ease-in-out;
+  font-size: 0.8em;
+  color: var(--ifm-color-primary);
+}
+.markdown details[open] > summary::before {
+  transform: rotate(90deg); /* Expanded state */
+}
+
+
+/* Style the expanded content area */
+.markdown details[open] {
+  /* Add padding ONLY when open */
+  padding: 1rem;
+  padding-top: 0.5rem; /* Less padding above content */
+  margin-bottom: 1rem; /* Space between open accordions */
+  border-radius: var(--ifm-global-radius); /* Rounded corners */
+  border: 1px solid var(--ifm-color-emphasis-300); /* Subtle border */
+  border-top: none; /* Remove top border as summary has bottom border */
+}
+
+/* Apply theme-aware semi-transparent background */
+:root {
+  --faq-accordion-bg: rgba(255, 255, 255, 0.6); /* Semi-transparent white for light mode */
+}
+html[data-theme='dark'] {
+  --faq-accordion-bg: rgba(0, 0, 0, 0.15); /* Semi-transparent black/dark for dark mode */
+}
+
+.markdown details[open] {
+   background-color: var(--faq-accordion-bg);
+}
+
+/* Ensure content inside has normal color */
+.markdown details[open] > *:not(summary) {
+   color: var(--ifm-color-content);
+}
