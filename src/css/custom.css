@@ -245,24 +245,8 @@ html[data-theme='dark'] .minimal-landing-logo .logo-light-mode {
   display: none; /* Hide light logo ONLY in dark mode */
 }
 
-/* --- Hide Footer ONLY on Minimal Landing Page --- */
-/* Target the footer only when it's inside our specific page content class */
-.minimal-landing-page-content + .footer {
-  display: none !important; /* Use !important to force override if needed */
+/* --- Hide Footer ONLY on Root Page ('/') --- */
+/* Target footer when the body has the root path class */
+body.path-slash .footer {
+  display: none !important; /* Use !important to ensure override */
 }
-/* --- OR if the above doesn't work, try targeting footer directly within the main wrapper --- */
-/* .main-wrapper > .footer { */
-/* display: none !important; */
-/* } */
-
-/* Adjust main content height if footer is hidden - experimental */
-/* This might be needed if removing the footer leaves unwanted space */
-/* .main-wrapper { */
-/* padding-bottom: 0;  */
-/* } */
-/* main.main-wrapper { */
-/* min-height: calc(100vh - var(--ifm-navbar-height)); */
-/* } */
-/* --- IMPORTANT FONT CHECK --- */
-/* Double-check the exact font-family names ('neulis-sans', 'quicksand') */
-/* against what Adobe Fonts specifies. */
