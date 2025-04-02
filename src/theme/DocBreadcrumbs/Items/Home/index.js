@@ -15,7 +15,7 @@ export default function HomeBreadcrumbItem() {
           description: 'The ARIA label for the home page in the breadcrumbs',
         })}
         className="breadcrumbs__link"
-        href="#">
+        href="https://docs.blockport.xyz/docs/introduction">
         <IconHome className={styles.breadcrumbHomeIcon} />
       </Link>
     </li>
