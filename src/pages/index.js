@@ -4,8 +4,9 @@ import Head from '@docusaurus/Head';
 import Root from '@theme/Root'; // Keep Root!
 
 export default function MinimalLandingPage() {
-  // Point to just one logo version for this test
-  const logoUrl = useBaseUrl('/img/blockport_logo_black.png'); // Use black logo
+  // Ensure these paths are correct in your static/img folder
+  const logoLightUrl = useBaseUrl('/img/blockport_logo_black.png'); // Black logo
+  const logoDarkUrl = useBaseUrl('/img/blockport_logo_white.png');  // White logo
 
   return (
     <Root>
@@ -22,13 +23,21 @@ export default function MinimalLandingPage() {
           minHeight: '100vh',
           textAlign: 'center',
         }}>
-        {/* *** Use a simple img tag instead of ThemedImage *** */}
-        <img
-          alt="Blockport Logo"
-          src={logoUrl}
-          width="150"
-          style={{ marginBottom: '1rem' }} // Add some space below logo
-        />
+        {/* Container for theme logos - THIS STRUCTURE IS CRUCIAL */}
+        <div className="minimal-landing-logo" style={{ marginBottom: '1rem' }}> {/* Ensure this div exists */}
+          <img
+            className="logo-light-mode" // Ensure this class exists
+            alt="Blockport Logo"
+            src={logoLightUrl}
+            width="150"
+          />
+          <img
+            className="logo-dark-mode" // Ensure this class exists
+            alt="Blockport Logo"
+            src={logoDarkUrl}
+            width="150"
+          />
+        </div>
         <p style={{ fontSize: '1.1rem' }}>
           Landing page coming soon
         </p>
