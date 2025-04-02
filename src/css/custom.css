@@ -38,7 +38,8 @@
 }
 
 /* Dark mode overrides */
-[data-theme='dark'] {
+/* Dark mode overrides */
+html[data-theme='dark'] { /* Use the specific selector found */
   /* --- Dark Mode Background --- */
   --ifm-background-color: #010D14; /* RICH BLACK */
   --ifm-background-surface-color: var(--ifm-background-color); /* Match surface to main */
@@ -65,6 +66,19 @@
 
   /* --- Other dark mode base variables --- */
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+
+  /* --- Overwrite default gray emphasis colors if needed --- */
+  /* Example: Make emphasis colors slightly brighter on RICH BLACK */
+  --ifm-color-emphasis-0: #000000; /* Usually black */
+  --ifm-color-emphasis-100: #1a1a1a;
+  --ifm-color-emphasis-200: #333333;
+  --ifm-color-emphasis-300: #4d4d4d;
+  --ifm-color-emphasis-400: #666666;
+  --ifm-color-emphasis-600: #999999;
+  --ifm-color-emphasis-700: #b3b3b3;
+  --ifm-color-emphasis-800: #cccccc;
+  --ifm-color-emphasis-900: #e6e6e6;
+  --ifm-color-emphasis-1000: #ffffff; /* Usually white */
 }
 
 /* --- Explicitly set body background (helps override defaults) --- */
