@@ -1,29 +1,33 @@
 import React from 'react';
 import useBaseUrl from '@docusaurus/useBaseUrl';
-import Layout from '@theme/Layout'; // *** IMPORT Layout ***
-import ThemedImage from '@theme/ThemedImage';
+import Head from '@docusaurus/Head';
+import Root from '@theme/Root'; // *** USE Root AGAIN ***
 
 export default function MinimalLandingPage() {
-  const logoLightUrl = useBaseUrl('/img/blockport_logo_black.png');
-  const logoDarkUrl = useBaseUrl('/img/blockport_logo_white.png');
+  // Ensure these paths are correct in your static/img folder
+  const logoLightUrl = useBaseUrl('/img/blockport_logo_black.png'); // Black logo
+  const logoDarkUrl = useBaseUrl('/img/blockport_logo_white.png');  // White logo
 
   return (
-    // *** USE Layout Wrapper ***
-    <Layout
-      title="Blockport | Coming Soon" // Set browser tab title
-      description="Blockport Solana Validator - Landing page coming soon"> {/* Set meta description */}
-
-      {/* Add a unique class name to this div */}
+    // *** WRAP in <Root> ***
+    <Root>
+      <Head>
+        <title>Blockport | Coming Soon</title>
+        <meta name="description" content="Blockport Validator - Landing page coming soon" />
+        {/* Prevent indexing this placeholder page if desired */}
+        {/* <meta name="robots" content="noindex, nofollow" /> */}
+      </Head>
+      {/* Use the centering div */}
       <div
-        className="minimal-landing-page-content" // *** ADDED CLASSNAME ***
+        className="minimal-landing-page-content" // Keep class for potential styling
         style={{
           display: 'flex',
           flexDirection: 'column',
           justifyContent: 'center',
           alignItems: 'center',
-          minHeight: 'calc(100vh - var(--ifm-navbar-height) - var(--ifm-footer-height))', // Adjust height calculation
+          minHeight: '100vh', // Use full viewport height
           textAlign: 'center',
-          padding: '2rem 0' // Add some padding top/bottom
+          // Background comes from theme via Root/CSS
         }}>
         {/* Container for theme logos */}
         <div className="minimal-landing-logo" style={{ marginBottom: '1rem' }}>
@@ -45,6 +49,6 @@ export default function MinimalLandingPage() {
           Landing page coming soon
         </p>
       </div>
-    </Layout> // *** END Layout WRAPPER ***
+    </Root> // *** END <Root> WRAPPER ***
   );
 }

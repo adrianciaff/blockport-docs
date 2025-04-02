@@ -244,9 +244,3 @@ html[data-theme='dark'] .minimal-landing-logo .logo-dark-mode {
 html[data-theme='dark'] .minimal-landing-logo .logo-light-mode {
   display: none; /* Hide light logo ONLY in dark mode */
 }
-
-/* --- Hide Footer ONLY on Root Page ('/') --- */
-/* Target footer when the body has the root path class */
-body.path-slash .footer {
-  display: none !important; /* Use !important to ensure override */
-}
