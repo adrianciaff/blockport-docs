@@ -3,21 +3,14 @@ sidebar_position: 1
 title: Introduction
 ---
 
-### High-Performance Solana Validator
+## High-Performance Solana Validator
 
-Blockport operates a top-performing Solana validator designed for maximum uptime, security, and minimsed vote latency. We offer:
+Blockport operates a top-performing Solana validator designed for maximum uptime, security, and minimised vote latency. We offer:
 
 * **Zero Commissions:** Benefit from **0% commissions** on inflation rewards.
 * **Proven Reliability:** Backed by over 3 years of continuous operation with a 99.9% uptime record.
 
-**Resources:**
-* [Link: Staking Guides] - Reach out if you need assistance staking your SOL with Blockport.
-* [Link: Validator Performance Dashboard] - View real-time and historical performance metrics.
-* [Link: Validator Specifications] - Detailed hardware and network information.
-
 ## Core Technical Principles
-
-Blockport operates on the following technical principles:
 
 * **Reliability & Uptime:** We prioritize operational stability through redundant infrastructure across multiple continents, proactive monitoring (automated and manual), and rigorous incident response protocols. Our 3+ year track record reflects this commitment.
 * **Performance Optimization:** Our validators utilize carefully selected hardware (including AMD Ryzen Threadripper Pro CPUs and high-speed NVMe drives) and optimized configurations specifically tailored to meet Solana's demanding performance requirements, maximizing yield potential.
@@ -29,8 +22,9 @@ Blockport operates on the following technical principles:
 
 This documentation site is structured to help you find the information you need quickly:
 
-* **Support:** Speak to one of our helpful on-boarding assistants to stake with Blockport.
-* **Validator:** Detailed information on performance, hardware specifications, and security practices.
-* **Community:** Find contact information and links to community channels.
+* [FAQ](https://docs.blockport.xyz/docs/faq) - Learn about our rebrand from Zeta Node to Blockport. 
+* [Validator Overview]() - Information on historical performance, security, and team.
+* [Hardware Specifications]() - Detailed hardware and locations.
+* [Book a call](https://docs.blockport.xyz/docs/Contact) - Contact details for assistance with staking and support inquiries.
 
 Use the navigation menu to explore these sections.
