@@ -169,7 +169,18 @@ html:not(.docs-wrapper) .footer .container-fluid {
 .markdown form button[type="submit"] { display: inline-block; font-weight: bold; text-align: center; text-decoration: none; cursor: pointer; border-radius: var(--ifm-global-radius); padding: 0.75rem 1.5rem; font-size: 1rem; border: none; transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out; background-color: var(--ifm-color-primary); color: #FFFFFF; }
 .markdown form button[type="submit"]:hover { opacity: 0.9; }
 
-/* --- REMOVED FAQ Accordion Styling --- */
+/* --- Theme-Aware Logo on Minimal Landing Page --- */
+.minimal-landing-logo .logo-dark-mode {
+  display: none; /* Hide dark logo by default (in light mode) */
+}
+
+html[data-theme='dark'] .minimal-landing-logo .logo-dark-mode {
+  display: inline-block; /* Show dark logo ONLY in dark mode */
+}
+
+html[data-theme='dark'] .minimal-landing-logo .logo-light-mode {
+  display: none; /* Hide light logo ONLY in dark mode */
+}
 
 /* --- IMPORTANT FONT CHECK --- */
 /* Double-check the exact font-family names ('neulis-sans', 'quicksand') */
