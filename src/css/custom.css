@@ -34,9 +34,6 @@
   --form-input-text-color: #010D14; /* Dark text */
   --form-input-focus-border-color: var(--ifm-color-primary); /* Orange border on focus */
 
-  /* --- Light Mode FAQ Accordion Background (Matches Input) --- */
-  --faq-accordion-bg: var(--form-input-background);
-
   /* --- Other base variables --- */
   --ifm-code-font-size: 95%;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
@@ -77,9 +74,6 @@ html[data-theme='dark'] {
   --form-input-border-color: #444444; /* Darker gray border */
   --form-input-text-color: #E3E3E3; /* Light text */
   --form-input-focus-border-color: var(--ifm-color-primary); /* Orange border on focus */
-
-  /* --- Dark Mode FAQ Accordion Background (Matches Input) --- */
-  --faq-accordion-bg: var(--form-input-background);
 
   /* --- Other dark mode base variables --- */
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
@@ -175,49 +169,8 @@ html:not(.docs-wrapper) .footer .container-fluid {
 .markdown form button[type="submit"] { display: inline-block; font-weight: bold; text-align: center; text-decoration: none; cursor: pointer; border-radius: var(--ifm-global-radius); padding: 0.75rem 1.5rem; font-size: 1rem; border: none; transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out; background-color: var(--ifm-color-primary); color: #FFFFFF; }
 .markdown form button[type="submit"]:hover { opacity: 0.9; }
 
+/* --- REMOVED FAQ Accordion Styling --- */
 
-/* --- UPDATED FAQ Accordion Styling --- */
-
-/* Style the clickable question part */
-.markdown details > summary {
-  cursor: pointer;
-  padding: 0.75rem 0.5rem;
-  font-weight: bold;
-  list-style-type: none; /* Hide default marker (Standard) */
-  margin-bottom: 0.5rem;
-  border-bottom: 1px solid var(--ifm-color-emphasis-300);
-  transition: background-color 0.2s ease;
-}
-.markdown details > summary:hover {
-  background-color: var(--ifm-hover-overlay);
-}
-
-/* Hide default marker for Webkit browsers */
-.markdown details > summary::-webkit-details-marker {
-  display: none;
-}
-
-/* --- ADDED: Hide default marker for Firefox/other browsers --- */
-.markdown details > summary::marker {
-  display: none;
-  content: ""; /* Also try setting content to empty */
-  font-size: 0; /* Try reducing font size */
-}
-/* --- END ADDED RULE --- */
-
-
-/* Style the expanded content area */
-/* ... (rest of accordion styles remain the same) ... */
-.markdown details[open] {
-  padding: 1rem;
-  padding-top: 0.5rem;
-  margin-bottom: 1rem;
-  border-radius: var(--ifm-global-radius);
-  border: 1px solid var(--ifm-color-emphasis-300);
-  border-top: none;
-  background-color: var(--faq-accordion-bg) !important;
-}
-/* Ensure content inside has normal color */
-.markdown details[open] > *:not(summary) {
-   color: var(--ifm-color-content);
-}
+/* --- IMPORTANT FONT CHECK --- */
+/* Double-check the exact font-family names ('neulis-sans', 'quicksand') */
+/* against what Adobe Fonts specifies. */
