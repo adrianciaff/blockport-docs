@@ -232,6 +232,18 @@ html:not(.docs-wrapper) .footer .container-fluid {
   opacity: 0.9; /* Simple opacity hover */
 }
 
+/* --- Theme-Aware Logo on Minimal Landing Page --- */
+.minimal-landing-logo .logo-dark-mode {
+  display: none; /* Hide dark logo by default (in light mode) */
+}
+
+html[data-theme='dark'] .minimal-landing-logo .logo-dark-mode {
+  display: inline-block; /* Show dark logo ONLY in dark mode */
+}
+
+html[data-theme='dark'] .minimal-landing-logo .logo-light-mode {
+  display: none; /* Hide light logo ONLY in dark mode */
+}
 
 /* --- IMPORTANT FONT CHECK --- */
 /* Double-check the exact font-family names ('neulis-sans', 'quicksand') */
