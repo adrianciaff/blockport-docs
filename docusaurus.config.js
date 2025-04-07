@@ -67,7 +67,7 @@ const config = {
           {
             type: 'docSidebar',
             sidebarId: 'tutorialSidebar', // Make sure this matches the ID in sidebars.js
-            position: 'left',
+            position: 'right',
             label: 'Docs',
           },
           // Add other navbar items here if needed

@@ -212,41 +212,36 @@ html[data-theme='dark'] .minimal-landing-logo .logo-light-mode {
   /* .navbar__inner { max-width: 100%; } */
 
 
-/* --- Markdown Table Styling --- */
+/* --- UPDATED Markdown Table Styling --- */
 
-/* Add some padding and borders to cells for clarity */
+/* Cell padding and borders */
 .markdown table th,
 .markdown table td {
   padding: 0.75rem 1rem;
   border: 1px solid var(--ifm-color-emphasis-300);
 }
 
-/* Style the header row */
+/* Header row */
 .markdown table thead tr {
-  background-color: var(--ifm-color-emphasis-200); /* Slightly darker header */
+  background-color: var(--ifm-color-emphasis-200);
   font-weight: bold;
 }
 html[data-theme='dark'] .markdown table thead tr {
-   background-color: var(--ifm-color-emphasis-300); /* Adjust dark header */
+   background-color: var(--ifm-color-emphasis-300);
 }
 
-/* Style the data rows (tbody) */
-.markdown table tbody tr {
-  background-color: var(--form-input-background); /* Use form input background */
-  border-bottom: 1px solid var(--ifm-color-emphasis-200); /* Subtle row separator */
+/* Style BOTH odd and even data rows the SAME */
+.markdown table tbody tr:nth-child(odd),
+.markdown table tbody tr:nth-child(even) {
+  background-color: var(--form-input-background); /* Use form input background for ALL data rows */
+  border: none; /* Remove individual row borders if desired */
 }
 
-/* Optional: Remove bottom border from last row */
-.markdown table tbody tr:last-child {
-   border-bottom: none;
-}
-
-/* Optional: Add hover effect to data rows */
+/* Optional: Add back hover effect */
 .markdown table tbody tr:hover {
    background-color: var(--ifm-color-emphasis-100);
 }
 html[data-theme='dark'] .markdown table tbody tr:hover {
-   background-color: var(--ifm-color-emphasis-200);
+   background-color: var(--ifm-color-emphasis-300); /* Slightly darker than header now */
 }
-
 }
