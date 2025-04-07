@@ -44,12 +44,12 @@
     text-decoration: underline;
   }
   
-  /* Container for multiple cards - use in MDX file */
-  .teamContainer {
+/* Container for multiple cards - use in MDX file */
+.teamContainer {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center; /* Center cards horizontally */
-    gap: 2rem; /* Space between cards */
+    justify-content: flex-start; /* Align cards to the start (left) */
+    gap: 2rem;
     margin-top: 2rem;
     margin-bottom: 2rem;
   }
