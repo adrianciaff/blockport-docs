@@ -1,10 +1,8 @@
 import React, { useState, useEffect } from 'react';
-// REMOVE: import { useDocusaurusContext } from '@docusaurus/useDocusaurusContext';
 
 const START_EPOCH = 269;
-const HELIUS_RPC_BASE_URL = 'https://mainnet.helius-rpc.com/';
-// *** Read the API key from environment variables AGAIN ***
-const HELIUS_API_KEY = process.env.DOCUSAURUS_HELIUS_API_KEY;
+// API route within our own Vercel project
+const API_ENDPOINT = '/api/getEpochInfo';
 
 // Formatting function (keep as is)
 function formatCurrencyValue(value) {
@@ -15,17 +13,12 @@ function formatCurrencyValue(value) {
     return `$${value.toFixed(0)}`;
 }
 
-
 export default function EpochCounter() {
-  // REMOVE: const { siteConfig } = useDocusaurusContext();
-  // REMOVE: const HELIUS_API_KEY = siteConfig?.customFields?.heliusApiKey;
-
   const [epochsOperated, setEpochsOperated] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    // We'll read HELIUS_API_KEY directly from the top scope now
     console.log('EpochCounter: useEffect running.');
 
     const fetchData = async () => {
@@ -34,30 +27,34 @@ export default function EpochCounter() {
       setError(null);
       setEpochsOperated(null);
 
-      // *** Check key from process.env (via constant) ***
-      if (!HELIUS_API_KEY) {
-        const errorMsg = 'Helius API Key environment variable not found (DOCUSAURUS_HELIUS_API_KEY)';
-        console.error('EpochCounter:', errorMsg);
-        setError(errorMsg);
-        setIsLoading(false);
-        return;
-      }
-
-      // Construct the full URL
-      const rpcUrl = `<span class="math-inline">\{HELIUS\_RPC\_BASE\_URL\}?api\-key\=</span>{HELIUS_API_KEY}`;
-      console.log('EpochCounter: EXACT URL being fetched:', rpcUrl);
+      console.log('EpochCounter: Attempting to fetch from internal API:', API_ENDPOINT);
 
       try {
-        const response = await fetch(rpcUrl, { /* ... fetch options ... */ });
-        console.log('EpochCounter: Fetch response status:', response.status, response.statusText);
-        if (!response.ok) { /* ... throw error ... */ }
+        // Fetch from our own backend API route
+        // Use POST method as our API handler expects it for the RPC call logic
+        const response = await fetch(API_ENDPOINT, { method: 'POST' });
+
+        console.log('EpochCounter: API Fetch response status:', response.status, response.statusText);
+
+        if (!response.ok) {
+          let errorBody = `Status: ${response.status}`;
+          try { errorBody = await response.text(); } catch (_) { /* Ignore */ }
+          throw new Error(`Failed to fetch epoch info: ${response.statusText} - ${errorBody}`);
+        }
+
         const data = await response.json();
-        console.log('EpochCounter: RPC Data received:', data);
-        if (data.error || !data.result || data.result.epoch === undefined) { /* ... throw error ... */ }
-        const currentEpoch = data.result.epoch;
+        console.log('EpochCounter: API Data received:', data);
+
+        if (data.error || data.currentEpoch === undefined) {
+          console.error('EpochCounter: Error in API response:', data.error || 'Invalid data');
+          throw new Error(data.error || 'Failed to parse epoch info from API response.');
+        }
+
+        const currentEpoch = data.currentEpoch;
         const operated = currentEpoch - START_EPOCH;
         console.log(`EpochCounter: Calculation: ${currentEpoch} - ${START_EPOCH} = ${operated}`);
         setEpochsOperated(operated);
+
       } catch (err) {
         console.error("EpochCounter: Error caught in fetchData:", err);
         setError(err.message);
@@ -69,7 +66,6 @@ export default function EpochCounter() {
 
     fetchData();
 
-  // }, [HELIUS_API_KEY]); // Dependency no longer needed as it's a top-level const now
   }, []); // Run only once on mount
 
   console.log('EpochCounter: Rendering component state:', { isLoading, error, epochsOperated });
