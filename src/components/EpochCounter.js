@@ -4,7 +4,7 @@ const START_EPOCH = 269;
 // Base Helius URL without the key
 const HELIUS_RPC_BASE_URL = 'https://mainnet.helius-rpc.com/';
 // Read the API key from environment variables
-const HELIUS_API_KEY = process.env.HELIUS_API_KEY;
+const HELIUS_API_KEY = process.env.DOCUSAURUS_HELIUS_API_KEY;
 
 // Function to format large numbers (e.g., 28000000 -> $28M)
 function formatCurrencyValue(value) {
