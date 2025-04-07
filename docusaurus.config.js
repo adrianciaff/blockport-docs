@@ -20,10 +20,7 @@ const config = {
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
 
-   // Custom fields (ensure key is securely in Vercel env vars too)
-   customFields: {
-    heliusApiKey: '92414d5c-3872-4c99-9ff6-bfe28c0aef7f', // Consider removing if only using env vars
-  },
+
 
   // Stylesheets
   stylesheets: [
