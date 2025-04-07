@@ -18,9 +18,11 @@
   tutorialSidebar: [
     { type: 'doc', id: 'introduction', label: 'Introduction' }, // Object format
     { type: 'doc', id: 'overview',     label: 'Overview'     }, // Object format
-    { type: 'doc', id: 'faq',          label: 'FAQ'          }, // Object format
     { type: 'doc', id: 'hardware',     label: 'Hardware'     }, // Object format
-    { type: 'doc', id: 'contact',      label: 'Contact'      }, // Object format (use correct id/label)
+    { type: 'doc', id: 'team',         label: 'Team'         }, // Object format (use correct id/label)
+    { type: 'doc', id: 'faq',          label: 'FAQ'          }, // Object format
+    { type: 'doc', id: 'contact',      label: 'Contact'      },
+ 
                                                                 // If file is form.mdx, use id: 'form', label: 'Contact Form'
   ],
   // ... other sidebars if they exist ...

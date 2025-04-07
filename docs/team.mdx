@@ -1,0 +1,31 @@
+---
+sidebar_position: 4
+title: team 
+id: team
+slug: /team
+---
+import TeamProfileCard from '@site/src/components/TeamProfileCard';
+import styles from '@site/src/components/TeamProfileCard.module.css'; // Import styles for container
+
+## Team
+
+{/* Use a wrapper div with the container style */}
+<div className={styles.teamContainer}>
+
+  <TeamProfileCard
+    name="Adrian Ciaffoncini"
+    title="Co-Founder & COO"
+    imageUrl="/img/team/adrian.jpeg"
+    linkedinUrl="https://www.linkedin.com/in/adrianciaff/"
+    twitterUrl="https://x.com/redactedadrian"
+  />
+
+  <TeamProfileCard
+    name="Nik Herrmann"
+    title="Co-Founder & CTO"
+    imageUrl="/img/team/nik.jpeg" 
+    linkedinUrl="https://www.linkedin.com/in/nikolaus-herrmann-12090a135/"
+    twitterUrl="https://x.com/nikhrmn"
+  />
+
+</div>
