@@ -185,3 +185,30 @@ html[data-theme='dark'] .minimal-landing-logo .logo-light-mode {
 /* --- IMPORTANT FONT CHECK --- */
 /* Double-check the exact font-family names ('neulis-sans', 'quicksand') */
 /* against what Adobe Fonts specifies. */
+
+/* --- Mobile Adjustments --- */
+
+@media (max-width: 996px) {
+  /* Adjust Footer Content Alignment on Mobile */
+  .footer .container-fluid {
+    /* Reset padding to be symmetrical */
+    padding-left: var(--standard-internal-padding);
+    padding-right: var(--standard-internal-padding);
+    /* Reset margin to allow centering if needed */
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* Reset fallback padding as well if necessary */
+  html:not(.docs-wrapper) .footer .container-fluid {
+    padding-left: var(--standard-internal-padding);
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* Optional: Adjust other elements for mobile if needed */
+  /* Example: Reduce max-width of main container */
+  /* .main-wrapper { max-width: 100%; } */
+  /* .navbar__inner { max-width: 100%; } */
+
+}
