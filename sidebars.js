@@ -20,6 +20,7 @@
     { type: 'doc', id: 'overview',     label: 'Overview'     }, // Object format
     { type: 'doc', id: 'hardware',     label: 'Hardware'     }, // Object format
     { type: 'doc', id: 'team',         label: 'Team'         }, // Object format (use correct id/label)
+    { type: 'doc', id: 'security',     label: 'Security'     }, // Object format (use correct id/label)
     { type: 'doc', id: 'faq',          label: 'FAQ'          }, // Object format
     { type: 'doc', id: 'contact',      label: 'Contact'      },
  
