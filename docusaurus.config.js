@@ -20,19 +20,17 @@ const config = {
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
 
-   // *** ADD THIS SECTION ***
+   // Custom fields (ensure key is securely in Vercel env vars too)
    customFields: {
-    heliusApiKey: '92414d5c-3872-4c99-9ff6-bfe28c0aef7f', // Your Helius API Key
+    heliusApiKey: '92414d5c-3872-4c99-9ff6-bfe28c0aef7f', // Consider removing if only using env vars
   },
 
-  // *** ADD THIS ARRAY (or add the URL to the existing array) ***
+  // Stylesheets
   stylesheets: [
     'https://use.typekit.net/esv0mpp.css',
   ],
 
-  // Even if you don't use internationalization, you can use this field to set
-  // useful metadata like html lang. For example, if your site is Chinese, you
-  // may want to replace "en" with "zh-Hans".
+  // i18n config
   i18n: {
     defaultLocale: 'en',
     locales: ['en'],
@@ -42,11 +40,14 @@ const config = {
     [
       'classic',
       /** @type {import('@docusaurus/preset-classic').Options} */
-      ({ // This is the options object
+      ({ // Preset options
         docs: {
-          // ... your docs settings ...
+          sidebarPath: './sidebars.js', // Assuming this path is correct
+          // Remove editUrl if you don't want "Edit this page" links
+          // editUrl:
+          //  'https://github.com/adrianciaff/blockport-docs/tree/main/', // Example pointing to your repo
         },
-        blog: false, // <-- SET TO false
+        blog: false, // Blog disabled
         theme: {
           customCss: './src/css/custom.css',
         },
@@ -57,71 +58,61 @@ const config = {
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
-      // Replace with your project's social card
-      image: 'img/docs-v1.jpg', // Consider creating a social card image for blockport
+      image: 'img/docs-v1.png', // Updated image path assuming png
       navbar: {
-        title: 'Blockport', // You might want to change this title
+        title: 'Blockport',
         logo: {
-          alt: 'Blockport Logo', // Or more descriptive alt text
-          src: 'img/blockport_logo_black.png', // <-- Black logo for light mode
-          srcDark: 'img/blockport_logo_white.png', // <-- White logo for dark mode
+          alt: 'Blockport Logo',
+          src: 'img/blockport_logo_black.png',
+          srcDark: 'img/blockport_logo_white.png',
         },
         items: [
           {
             type: 'docSidebar',
-            sidebarId: 'tutorialSidebar', // Ensure this matches your sidebar file name if default 'docs' sidebar is used
+            sidebarId: 'tutorialSidebar', // Make sure this matches the ID in sidebars.js
             position: 'left',
-            label: 'Docs', // Changed from 'Tutorial'
+            label: 'Docs',
           },
-
-
+          // Add other navbar items here if needed
         ],
       },
       footer: {
-       //style: 'dark',
+       // style: 'dark', // Removed this as requested earlier
         links: [
+          // "Docs" column
           {
             title: 'Docs',
             items: [
-              {
-                label: 'Introduction', // Changed label
-                to: '/docs/introduction',
-              },
-              {
-                label: 'FAQ', // Added FAQ link
-                to: '/docs/faq',
-              },
+              { label: 'Introduction', to: '/docs/introduction' },
+              { label: 'FAQ', to: '/docs/faq' },
+              { label: 'Overview', to: '/docs/overview' }, // Example adding links
+              { label: 'Hardware', to: '/docs/hardware' },
+              { label: 'Contact', to: '/docs/contact' },
             ],
           },
+          // "Community" column
           {
-            title: 'Community', // Update community links if needed
+            title: 'Community',
             items: [
-             // {
-             //   label: 'Stack Overflow',
-             //   href: 'https://stackoverflow.com/questions/tagged/docusaurus', // Update or remove
-             // },
               {
                 label: 'Telegram',
-                href: 'https://t.me/+GoiXjMRh1042MTQ1', // Update or remove
+                href: 'https://t.me/+GoiXjMRh1042MTQ1',
               },
               {
                 label: 'X',
-                href: 'https://x.com/blockportxyz', // Update or remove
+                href: 'https://x.com/blockportxyz',
               },
             ],
           },
-
+          // *** REMOVED the "More" column entirely as its only item (Blog) was invalid ***
         ],
-        // Update copyright text
-        copyright: `Copyright © ${new Date().getFullYear()} Blockport.`,
+        copyright: `Copyright © ${new Date().getFullYear()} Blockport.`, // Updated copyright text slightly
       },
-      // *** Added colorMode configuration ***
       colorMode: {
         defaultMode: 'dark',
         disableSwitch: false,
-        respectPrefersColorScheme: true, // Respects user's OS preference
+        respectPrefersColorScheme: true,
       },
-      // *** Prism configuration (already present, ensure it's correct) ***
       prism: {
         theme: prismThemes.github,
         darkTheme: prismThemes.dracula,
