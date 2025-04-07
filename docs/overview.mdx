@@ -5,6 +5,7 @@ id: overview
 slug: /overview
 ---
 import EpochCounter from '@site/src/components/EpochCounter';
+import BrowserOnly from '@docusaurus/BrowserOnly';
 
 # Validator Overview
 
@@ -35,4 +36,13 @@ import EpochCounter from '@site/src/components/EpochCounter';
 
 ## Operating history
 * Inception: Epoch 269.
-* Currently operating for <EpochCounter /> epochs.
+## Operating history
+
+* Inception: Epoch 269
+* Currently operating for <BrowserOnly fallback={<>...</>}>
+    {() => {
+      // Dynamically require the component only on the client
+      const EpochCounter = require('@site/src/components/EpochCounter').default;
+      return <EpochCounter />;
+    }}
+  </BrowserOnly> epochs
