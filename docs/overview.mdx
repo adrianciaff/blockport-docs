@@ -35,14 +35,5 @@ import BrowserOnly from '@docusaurus/BrowserOnly';
 * MEV Commission: 8%
 
 ## Operating history
-* Inception: Epoch 269.
-## Operating history
-
 * Inception: Epoch 269
-* Currently operating for <BrowserOnly fallback={<>...</>}>
-    {() => {
-      // Dynamically require the component only on the client
-      const EpochCounter = require('@site/src/components/EpochCounter').default;
-      return <EpochCounter />;
-    }}
-  </BrowserOnly> epochs
+* Currently operating for <BrowserOnly fallback={<>...</>}><EpochCounter /></BrowserOnly> epochs
