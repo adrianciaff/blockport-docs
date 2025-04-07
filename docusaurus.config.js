@@ -42,28 +42,11 @@ const config = {
     [
       'classic',
       /** @type {import('@docusaurus/preset-classic').Options} */
-      ({
+      ({ // This is the options object
         docs: {
-          sidebarPath: './sidebars.js'
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
-      
+          // ... your docs settings ...
         },
-        blog: {
-          showReadingTime: true,
-          feedOptions: {
-            type: ['rss', 'atom'],
-            xslt: true,
-          },
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
-          editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/', // Consider updating this later to your actual repo
-          // Useful options to enforce blogging best practices
-          onInlineTags: 'warn',
-          onInlineAuthors: 'warn',
-          onUntruncatedBlogPosts: 'warn',
-        },
+        blog: false, // <-- SET TO false
         theme: {
           customCss: './src/css/custom.css',
         },
@@ -133,7 +116,7 @@ const config = {
               // Consider removing blog link if unused
               {
                 label: 'Blog',
-                to: '/blog',
+              //  to: '#',
               },
               // Update GitHub link
               // {
