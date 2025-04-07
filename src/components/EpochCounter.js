@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useDocusaurusContext } from '@docusaurus/useDocusaurusContext'; // Correct default import
+import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 
 const START_EPOCH = 269;
 const HELIUS_RPC_BASE_URL = 'https://mainnet.helius-rpc.com/';
