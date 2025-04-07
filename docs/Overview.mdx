@@ -2,6 +2,8 @@
 sidebar_position: 2
 title: Overview
 ---
+import TeamProfileCard from '@site/src/components/TeamProfileCard';
+import styles from '@site/src/components/TeamProfileCard.module.css'; // Import styles for container
 
 # Validator Overview
 
@@ -31,6 +33,25 @@ This page provides a summary of Blockport's key operational aspects, including p
 
 ## Team
 
-<!-- Elfsight Team Showcase | Untitled Team Showcase -->
-<script src="https://static.elfsight.com/platform/platform.js" async></script>
-<div class="elfsight-app-36d74131-1694-495f-8570-658d2642b8eb" data-elfsight-app-lazy></div>
+## Team
+
+{/* Use a wrapper div with the container style */}
+<div className={styles.teamContainer}>
+
+  <TeamProfileCard
+    name="Adrian Ciaffoncini"
+    title="Co-Founder & COO"
+    imageUrl="/img/team/adrian.jpeg" // Ensure path is correct
+    linkedinUrl="https://www.linkedin.com/in/adrianciaff/"
+    twitterUrl="https://x.com/redactedadrian"
+  />
+
+  <TeamProfileCard
+    name="Nik Herrmann"
+    title="Co-Founder & CTO"
+    imageUrl="/img/team/nik.jpeg" // Ensure path is correct
+    linkedinUrl="https://www.linkedin.com/in/nikolaus-herrmann-12090a135/"
+    twitterUrl="https://x.com/nikhrmn"
+  />
+
+</div>
