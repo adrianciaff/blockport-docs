@@ -20,6 +20,11 @@ const config = {
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
 
+   // *** ADD THIS SECTION ***
+   customFields: {
+    heliusApiKey: '92414d5c-3872-4c99-9ff6-bfe28c0aef7f', // Your Helius API Key
+  },
+
   // *** ADD THIS ARRAY (or add the URL to the existing array) ***
   stylesheets: [
     'https://use.typekit.net/esv0mpp.css',
