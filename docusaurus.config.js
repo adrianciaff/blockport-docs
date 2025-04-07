@@ -110,21 +110,7 @@ const config = {
               },
             ],
           },
-          {
-            title: 'More',
-            items: [
-              // Consider removing blog link if unused
-              {
-                label: 'Blog',
-              //  to: '#',
-              },
-              // Update GitHub link
-              // {
-              //  label: 'GitHub',
-              //  href: 'https://github.com/adrianciaff/blockport-docs', // Example: Changed to your repo
-              //},
-            ],
-          },
+
         ],
         // Update copyright text
         copyright: `Copyright © ${new Date().getFullYear()} Blockport.`,
