@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-const START_EPOCH = 269;
+const START_EPOCH = 280;
 // API route within our own Vercel project
 const API_ENDPOINT = '/api/getEpochInfo';
 
