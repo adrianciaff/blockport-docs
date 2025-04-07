@@ -17,10 +17,10 @@
  const sidebars = {
   tutorialSidebar: [
     'introduction',
-    'Overview',
+    'overview',
     'hardware',
     'faq',
-    'Contact'
+    'contact'
   ],
   // ... other sidebars if they exist ...
 };
