@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 
-const START_EPOCH = 269;
+const START_EPOCH = 280;
 const HELIUS_RPC_BASE_URL = 'https://mainnet.helius-rpc.com/';
 
 // Function to format large numbers (e.g., 28000000 -> $28M)
