@@ -30,7 +30,7 @@ export default async function handler(request, response) {
     return response.status(500).json({ error: 'API key configuration error.' });
   }
 
-  const rpcUrl = `<span class="math-inline">\{HELIUS\_RPC\_BASE\_URL\}?api\-key\=</span>{HELIUS_API_KEY}`;
+  const rpcUrl = `${HELIUS_RPC_BASE_URL}?api-key=${HELIUS_API_KEY}`;
 
   try {
     const heliusResponse = await fetch(rpcUrl, {
