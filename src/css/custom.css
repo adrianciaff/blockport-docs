@@ -248,26 +248,33 @@ html[data-theme='dark'] .markdown table tbody tr:hover {
 
 /* --- Navbar Icon Links --- */
 
+/* --- Navbar Icon Links --- */
+
 /* General style for icon links */
 .header-icon-link {
   display: inline-block;
   width: 1.5rem;  /* Adjust size as needed */
   height: 1.5rem;
-  margin-left: 0.5rem; /* Spacing from previous item */
+  /* margin-left: 0.5rem; /* Spacing handled by sibling rule */
   background-color: currentColor; /* Use the theme's text/link color */
   mask-repeat: no-repeat;
   mask-size: 100% 100%;
+  vertical-align: middle;
+  margin-bottom: 2px;
 }
 
-/* Specific icon using mask-image with embedded SVG data */
+/* Light mode: Use the dark/light-background version of the logo */
 .header-telegram-link {
-  /* Simple Telegram Paper Plane SVG path */
-  /* Source: https://iconduck.com/icons/77052/telegram (CC0) or similar */
-  mask-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M22 2 L2 8.667 L11.429 12.571 L15.333 22 L22 2 z M11.429 12.571 L18.714 6.286 L10 14.857 V 20.571 L11.429 12.571 z" fill="black"/></svg>');
+  mask-image: url('/img/tg-logo-light.svg'); /* ASSUMES this is for light theme */
 }
 
-/* Ensure proper vertical alignment if needed */
-.navbar__items--right .header-icon-link {
-   vertical-align: middle;
-   margin-bottom: 2px; /* Slight adjustment might be needed */
+/* Dark mode: Use the light/dark-background version of the logo */
+html[data-theme='dark'] .header-telegram-link {
+  mask-image: url('/img/tg-logo-dark.svg'); /* ASSUMES this is for dark theme */
 }
+
+/* Rule for Consistent Right Navbar Spacing */
+.navbar__items--right > * + * {
+    margin-left: 1rem;
+}
+/* ... other styles ... */
