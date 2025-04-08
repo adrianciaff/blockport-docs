@@ -250,31 +250,34 @@ html[data-theme='dark'] .markdown table tbody tr:hover {
 
 /* --- Navbar Icon Links --- */
 
+/* --- Navbar Icon Links --- */
+
 /* General style for icon links */
 .header-icon-link {
   display: inline-block;
-  width: 1.5rem;  /* Adjust size as needed */
+  width: 1.5rem;
   height: 1.5rem;
-  /* margin-left: 0.5rem; /* Spacing handled by sibling rule */
-  background-color: currentColor; /* Use the theme's text/link color */
+  background-color: currentColor; /* Color applied here */
   mask-repeat: no-repeat;
-  mask-size: 100% 100%;
+  mask-size: contain; /* CHANGED: Scale icon down to fit */
+  mask-position: center; /* ADDED: Center the icon */
   vertical-align: middle;
   margin-bottom: 2px;
+  /* Removed margin-left, handled by sibling rule */
 }
 
 /* Light mode: Use the dark/light-background version of the logo */
 .header-telegram-link {
-  mask-image: url('/img/tg-logo-dark.svg'); /* ASSUMES this is for light theme */
+  mask-image: url('/img/tg-logo-light.svg'); /* Ensure path/filename correct */
 }
 
 /* Dark mode: Use the light/dark-background version of the logo */
 html[data-theme='dark'] .header-telegram-link {
-  mask-image: url('/img/tg-logo-light.svg'); /* ASSUMES this is for dark theme */
+  mask-image: url('/img/tg-logo-dark.svg'); /* Ensure path/filename correct */
 }
 
 /* Rule for Consistent Right Navbar Spacing */
 .navbar__items--right > * + * {
     margin-left: 1rem;
 }
-/* ... other styles ... */
+/* ... rest of file ... */
