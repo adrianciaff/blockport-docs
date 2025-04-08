@@ -37,7 +37,7 @@
     flex-wrap: wrap;
     gap: 1rem;
     justify-content: flex-start; /* Ensures left alignment */
-    width: 100%; /* ADDED: Ensure container takes width */
+ 
   }
   
   /* --- ADDED: Adjust button padding --- */
