@@ -230,19 +230,19 @@ html[data-theme='dark'] .markdown table thead tr {
    background-color: var(--ifm-color-emphasis-300);
 }
 
-/* Style BOTH odd and even data rows the SAME */
+/* Style BOTH odd and even data rows the SAME - Force with !important */
 .markdown table tbody tr:nth-child(odd),
 .markdown table tbody tr:nth-child(even) {
-  background-color: var(--form-input-background); /* Use form input background for ALL data rows */
+  background-color: var(--form-input-background) !important; /* ADDED !important */
   border: none; /* Remove individual row borders if desired */
 }
 
-/* Optional: Add back hover effect */
+/* Optional: Add back hover effect (also use !important if needed) */
 .markdown table tbody tr:hover {
-   background-color: var(--ifm-color-emphasis-100);
+   background-color: var(--ifm-color-emphasis-100) !important;
 }
 html[data-theme='dark'] .markdown table tbody tr:hover {
-   background-color: var(--ifm-color-emphasis-300); /* Slightly darker than header now */
+   background-color: var(--ifm-color-emphasis-300) !important;
 }
 }
 
