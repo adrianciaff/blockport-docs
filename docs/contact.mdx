@@ -12,35 +12,39 @@ For general inquiries:
 * **Email:** contact@blockport.xyz
 * **Telegram:** https://t.me/+dfbsk4pC0IxhMWVl
 
-Book a call with us to learn more about what we do:
 
-<form action="https://formspree.io/f/xldjpdjq" method="POST">
-  <div>
-    <label>
-      Your Name:
-      <input type="text" name="name" required />
-    </label>
-  </div>
-  <br /> {/* Add spacing */}
-  <div>
-    <label>
-      Your Email:
-      <input type="email" name="email" required />
-    </label>
-  </div>
-  <br /> {/* Add spacing */}
-  <div>
-    <label>
-      Your Message:
-      <textarea name="message" required></textarea>
-    </label>
-  </div>
-  <br /> {/* Add spacing */}
-  <div>
-    <button type="submit">Send Message</button>
-  </div>
-</form>
 
-{/* Add some space below the form */}
-<br />
-<br />
+import styles from './contact-widget.module.css'; // Import CSS module we'll create
+
+# Contact Us
+
+{/* Remove or keep the text below as needed */}
+For general inquiries:
+* **Email:** contact@blockport.xyz
+* **Telegram:** [https://t.me/+dfbsk4pC0IxhMWVl](https://t.me/+dfbsk4pC0IxhMWVl)
+
+
+{/* --- Start Contact Widget --- */}
+<div className={styles.contactWidget}>
+  <h3>Still have questions?</h3>
+  <p>
+    Book a meeting with our
+    team to learn more.
+  </p>
+  <div className={styles.widgetButtons}>
+    <a
+      href="https://form.typeform.com/to/j9ZpSklJ"
+      target="_blank"
+      rel="noopener noreferrer"
+      className={`button button--primary button--lg ${styles.scheduleButton}`}>
+      Schedule a call
+    <a
+      href="https://t.me/+GoiXjMRh1042MTQ1" // Telegram Link
+      target="_blank"
+      rel="noopener noreferrer"
+      className={`button button--secondary button--lg ${styles.chatButton}`}> {/* Use secondary style */}
+      Chat with us
+    </a>
+  </div>
+</div>
+{/* --- End Contact Widget --- */}

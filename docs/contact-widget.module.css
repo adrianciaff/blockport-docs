@@ -1,0 +1,54 @@
+/* File: docs/contact-widget.module.css */
+
+.contactWidget {
+    padding: 2rem;
+    border-radius: var(--ifm-global-radius);
+    background-color: var(--dark-secondary-background, #111D24); /* Dark background (use var defined in custom.css) */
+    color: var(--ifm-color-emphasis-800, #ccc); /* Light text */
+    max-width: 600px; /* Limit width */
+    margin: 3rem auto; /* Center and add vertical space */
+    border: 1px solid var(--ifm-color-emphasis-300);
+  }
+  
+  html[data-theme='light'] .contactWidget {
+     /* Optional: Define different styles for light theme if needed */
+     /* Example: Lighter background, darker text */
+     background-color: var(--ifm-navbar-background-color, #F0F0F0); /* Use light header/footer bg */
+     color: var(--ifm-color-content-secondary);
+     border: 1px solid var(--ifm-color-emphasis-200);
+  }
+  
+  
+  .contactWidget h3 {
+    margin-top: 0;
+    margin-bottom: 0.75rem;
+    font-weight: bold;
+    color: var(--ifm-color-content); /* Use theme heading color */
+  }
+  html[data-theme='dark'] .contactWidget h3 {
+      color: var(--ifm-color-content-secondary); /* Lighter heading for dark bg */
+  }
+  
+  
+  .contactWidget p {
+    margin-bottom: 1.5rem;
+    font-size: 1rem;
+    line-height: var(--ifm-line-height-base);
+  }
+  
+  .widgetButtons {
+    display: flex;
+    flex-wrap: wrap; /* Allow buttons to wrap on small screens */
+    gap: 1rem; /* Space between buttons */
+    justify-content: flex-start; /* Align buttons left */
+  }
+  
+  /* Style the primary schedule button (inherits from .button--primary) */
+  .scheduleButton {
+     /* Add custom styles if needed */
+  }
+  
+  /* Style the secondary chat button if added */
+  .chatButton {
+     /* Add custom styles if needed */
+  }
