@@ -1,28 +1,18 @@
 ---
-title: contact
-sidebar_position: 7
+title: Contact
+sidebar_position: 7 # Adjust if needed
 id: contact
 slug: /contact
 ---
 
+import styles from './contact-widget.module.css'; // <-- IMPORT MOVED HERE
+
 # Contact Us
 
 For general inquiries:
 
 * **Email:** contact@blockport.xyz
-* **Telegram:** https://t.me/+dfbsk4pC0IxhMWVl
-
-
-
-import styles from './contact-widget.module.css'; // Import CSS module we'll create
-
-# Contact Us
-
-{/* Remove or keep the text below as needed */}
-For general inquiries:
-* **Email:** contact@blockport.xyz
-* **Telegram:** [https://t.me/+dfbsk4pC0IxhMWVl](https://t.me/+dfbsk4pC0IxhMWVl)
-
+* **Telegram:** [https://t.me/+dfbsk4pC0IxhMWVl](https://t.me/+dfbsk4pC0IxhMWVl) {/* Using Markdown link format */}
 
 {/* --- Start Contact Widget --- */}
 <div className={styles.contactWidget}>
@@ -32,12 +22,16 @@ For general inquiries:
     team to learn more.
   </p>
   <div className={styles.widgetButtons}>
+    {/* Schedule Button */}
     <a
       href="https://form.typeform.com/to/j9ZpSklJ"
       target="_blank"
       rel="noopener noreferrer"
       className={`button button--primary button--lg ${styles.scheduleButton}`}>
       Schedule a call
+    </a>
+
+    {/* Chat with us Button */}
     <a
       href="https://t.me/+GoiXjMRh1042MTQ1" // Telegram Link
       target="_blank"
