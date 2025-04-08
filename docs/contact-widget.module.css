@@ -32,23 +32,25 @@
     line-height: var(--ifm-line-height-base);
   }
   
+  /* --- UPDATED Button Container --- */
   .widgetButtons {
-    display: flex;
+    display: flex; /* Keep flex display */
     flex-wrap: wrap;
     gap: 1rem;
-    justify-content: flex-start;
-    width: 100%;
-    box-sizing: border-box; /* ADD THIS LINE */
+    /* REMOVED justify-content: flex-start; */
+    /* REMOVED width: 100%; */
+    /* REMOVED box-sizing: border-box; */
   }
   
-  /* --- ADDED: Adjust button padding --- */
-  /* Target buttons specifically within this widget */
+  /* --- ADDED: Push items after the first one to the right --- */
+  .widgetButtons > a:first-child {
+    margin-right: auto; /* Pushes subsequent items right */
+  }
+  
+  /* Adjust button padding */
   .widgetButtons .button--lg {
-    padding-top: 0.6rem; /* Reduced vertical padding */
+    padding-top: 0.6rem;
     padding-bottom: 0.6rem;
-    /* Keep horizontal padding or adjust if needed */
-    /* padding-left: 1.5rem; */
-    /* padding-right: 1.5rem; */
   }
   
   /* Style the primary schedule button */
@@ -58,30 +60,27 @@
   
   /* Style the secondary chat button */
   .chatButton {
-     /* Add custom styles if needed */
-     /* Ensure icon and text align nicely */
      display: inline-flex;
      align-items: center;
   }
   
-  /* --- ADDED: Button Icon Styles --- */
+  /* Button Icon Styles */
   .buttonIcon {
     display: inline-block;
-    width: 1em; /* Size relative to font size */
+    width: 1em;
     height: 1em;
-    margin-right: 0.5em; /* Space between icon and text */
-    background-color: currentColor; /* Use button text color */
+    margin-right: 0.5em;
+    background-color: currentColor;
     mask-repeat: no-repeat;
     mask-size: contain;
     mask-position: center;
-    vertical-align: middle; /* Helps align with text */
+    vertical-align: middle;
   }
-  
   /* Light mode icon */
   .buttonIconTelegram {
-     mask-image: url('/img/tg-logo-light.svg'); /* Dark icon for light buttons */
+     mask-image: url('/img/tg-logo-light.svg');
   }
   /* Dark mode icon */
   html[data-theme='dark'] .buttonIconTelegram {
-     mask-image: url('/img/tg-logo-dark.svg'); /* Light icon for dark buttons */
+     mask-image: url('/img/tg-logo-dark.svg');
   }
