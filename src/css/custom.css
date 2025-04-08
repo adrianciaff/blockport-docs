@@ -306,7 +306,7 @@ html[data-theme='dark'] .header-telegram-link {
   border: 1px solid transparent;
   font-weight: bold;
   font-size: 0.9rem; /* Slightly smaller font */
-  line-height: 1.5; /* Adjust line height */
+  line-height: 1.2; /* Adjust line height */
   text-decoration: none !important; /* Override default link styles */
   cursor: pointer;
   transition: all 0.2s ease;
