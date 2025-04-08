@@ -71,11 +71,14 @@ const config = {
             label: 'Docs',
           },
       // Inside themeConfig.navbar.items array
+// Replace the simple text item above with this object:
           {
             href: 'https://t.me/+GoiXjMRh1042MTQ1', // Your Telegram link
             position: 'right',
-            label: 'Telegram', // Use simple text label for testing
-          }, // <-- Ensure comma is correct relative to other items
+            className: 'header-icon-link header-telegram-link', // Add classes back
+            label: '', // Use empty label for icon-only
+            'aria-label': 'Telegram Group', // Add accessibility label back
+          } // <-- Ensure comma is correct relative to other items- Ensure comma is correct relative to other items
         ],
       },
       footer: {
