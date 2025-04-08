@@ -296,21 +296,23 @@ html[data-theme='dark'] .header-telegram-link {
   margin-top: 1.5rem; /* Space above buttons */
 }
 
+/* Base button style */
 .contact-widget-button {
-  display: inline-flex; /* Use flex for icon/text alignment */
-  align-items: center; /* Vertically center icon and text */
+  display: inline-flex;
+  align-items: center;
   justify-content: center;
-  padding: 0.5rem 1.25rem; /* Control padding directly */
-  margin: 0.25rem 0.5rem 0.25rem 0; /* Spacing between/around buttons */
+  padding: 0.5rem 1.25rem;
+  margin: 0.25rem 0.5rem 0.25rem 0;
   border-radius: var(--ifm-global-radius);
   border: 1px solid transparent;
   font-weight: bold;
-  font-size: 0.9rem; /* Slightly smaller font */
-  line-height: 1.5; /* Adjust line height */
-  text-decoration: none !important; /* Override default link styles */
+  font-size: 0.9rem;
+  line-height: 1.5;
+  text-decoration: none !important;
   cursor: pointer;
   transition: all 0.2s ease;
-  white-space: nowrap; /* Prevent text wrapping */
+  white-space: nowrap;
+  flex-grow: 1; /* ADD THIS LINE */
 }
 
 /* Primary Button */
