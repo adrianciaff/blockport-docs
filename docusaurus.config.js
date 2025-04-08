@@ -70,7 +70,14 @@ const config = {
             position: 'right',
             label: 'Docs',
           },
-          // Add other navbar items here if needed
+      // Inside themeConfig.navbar.items array
+          {
+            href: 'https://t.me/+GoiXjMRh1042MTQ1', // Your Telegram link
+            position: 'right',
+            className: 'header-icon-link header-telegram-link', // Use specific classes for styling
+            label: '', // <-- ADD THIS EMPTY LABEL BACK
+            'aria-label': 'Telegram Group', // Accessibility label
+          }
         ],
       },
       footer: {
