@@ -289,99 +289,86 @@ html[data-theme='dark'] .header-telegram-link {
     margin-left: 1rem;
 }
 /* ... rest of file ... */
-/* --- Contact Widget Styles --- */
-.contact-widget {
-  padding: 2rem;
-  border-radius: var(--ifm-global-radius);
-  background-color: #111D24; /* Dark background as default */
-  color: #ccc; /* Light text as default */
-  max-width: 600px;
-  margin: 3rem auto;
-  border: 1px solid var(--ifm-color-emphasis-300);
-}
+/* --- NEW Contact Widget Button Styles (Global CSS) --- */
 
-/* Light theme override for widget background/text */
-html[data-theme='light'] .contact-widget {
-  background-color: #F0F0F0; /* Light background */
-  color: var(--ifm-color-content-secondary);
-  border: 1px solid var(--ifm-color-emphasis-200);
-}
-
-.contact-widget h3 {
-  margin-top: 0;
-  margin-bottom: 0.75rem;
-  font-weight: bold;
-  color: var(--ifm-heading-color); /* Use theme heading color */
-}
-
-.contact-widget p {
-  margin-bottom: 1.5rem;
-  font-size: 1rem;
-  line-height: var(--ifm-line-height-base);
-  color: var(--ifm-color-content-secondary); /* Use theme secondary text color */
-}
-
-/* Button container - use simple text-align */
 .contact-widget-buttons {
   text-align: left; /* Align buttons left */
+  margin-top: 1.5rem; /* Space above buttons */
 }
 
-/* Base button style */
 .contact-widget-button {
-  display: inline-flex; /* Use inline-flex for icon alignment */
-  align-items: center;
+  display: inline-flex; /* Use flex for icon/text alignment */
+  align-items: center; /* Vertically center icon and text */
   justify-content: center;
-  cursor: pointer;
-  border: 1px solid transparent; /* Border for secondary */
+  padding: 0.5rem 1.25rem; /* Control padding directly */
+  margin: 0.25rem 0.5rem 0.25rem 0; /* Spacing between/around buttons */
   border-radius: var(--ifm-global-radius);
-  padding: 0.5rem 1.25rem; /* Adjusted padding */
-  font-size: 1rem;
+  border: 1px solid transparent;
   font-weight: bold;
-  line-height: 1.5; /* Match text line height */
-  margin: 0.5rem 0.5rem 0.5rem 0; /* Spacing around buttons */
-  text-decoration: none;
-  transition: all 0.2s ease; /* Smooth transitions */
+  font-size: 0.9rem; /* Slightly smaller font */
+  line-height: 1.5; /* Adjust line height */
+  text-decoration: none !important; /* Override default link styles */
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap; /* Prevent text wrapping */
 }
 
-/* Primary button colors (Orange) */
-.contact-widget-button.primary {
-  background-color: var(--ifm-color-primary); /* Use theme primary color */
-  color: white; /* Assuming white text contrasts well */
+/* Primary Button */
+:root .contact-widget-button.cw-button-primary {
+  background-color: var(--ifm-color-primary); /* Tangerine */
   border-color: var(--ifm-color-primary);
+  color: white;
 }
-.contact-widget-button.primary:hover {
-  opacity: 0.9;
+html[data-theme='dark'] .contact-widget-button.cw-button-primary {
+  background-color: var(--ifm-color-primary); /* Orange Peel */
+  border-color: var(--ifm-color-primary);
+  color: var(--ifm-background-color); /* Use dark background for text */
+}
+.contact-widget-button.cw-button-primary:hover {
+  opacity: 0.85;
 }
 
-/* Secondary button colors (uses text color for border/text) */
-.contact-widget-button.secondary {
+/* Secondary Button */
+:root .contact-widget-button.cw-button-secondary {
   background-color: transparent;
-  border-color: currentColor; /* Use current text color for border */
-  color: var(--ifm-link-color); /* Use theme link color */
+  border-color: var(--ifm-color-primary); /* Use primary color border */
+  color: var(--ifm-color-primary); /* Use primary color text */
 }
-.contact-widget-button.secondary:hover {
-   background-color: var(--ifm-hover-overlay); /* Subtle background on hover */
+html[data-theme='dark'] .contact-widget-button.cw-button-secondary {
+  background-color: transparent;
+  border-color: var(--ifm-color-primary); /* Use primary color border */
+  color: var(--ifm-color-primary); /* Use primary color text */
+}
+.contact-widget-button.cw-button-secondary:hover {
+   background-color: rgba(var(--ifm-color-primary-rgb), 0.1); /* Faint primary bg on hover */
    text-decoration: none;
-   color: var(--ifm-link-hover-color);
 }
 
-/* Icon span style */
+
+/* Icon Styling (using img) */
 .contact-widget-button-icon {
-  display: inline-block;
-  width: 1em;
+  width: 1em; /* Size relative to button font size */
   height: 1em;
-  margin-right: 0.5em;
-  background-color: currentColor; /* Takes color from parent <a> */
-  mask-repeat: no-repeat;
-  mask-size: contain;
-  mask-position: center;
-  vertical-align: text-bottom; /* Adjust as needed */
+  display: inline-block; /* Needed for visibility */
+  vertical-align: middle; /* Re-adjust alignment */
+  margin-right: 0.5em; /* Space between icon and text */
 }
 
-/* Telegram icon variants */
-.contact-widget-button-icon.cwbi-telegram {
-   mask-image: url('/img/tg-logo-light.svg'); /* Dark icon for light bg */
+/* Hide dark icon in light mode */
+.contact-widget-button-icon.icon-dark-mode {
+  display: none;
 }
-html[data-theme='dark'] .contact-widget-button-icon.cwbi-telegram {
-   mask-image: url('/img/tg-logo-dark.svg'); /* Light icon for dark bg */
+/* Hide light icon in dark mode */
+html[data-theme='dark'] .contact-widget-button-icon.icon-light-mode {
+  display: none;
+}
+/* Show dark icon in dark mode */
+html[data-theme='dark'] .contact-widget-button-icon.icon-dark-mode {
+  display: inline-block; /* Override default display:none */
+}
+
+/* Text Span (optional styling if needed) */
+.contact-widget-button-text {
+  display: inline-block;
+  vertical-align: middle;
 }

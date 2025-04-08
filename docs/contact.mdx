@@ -20,23 +20,31 @@ For general inquiries:
     Book a meeting with our team to learn more.
   </p>
   {/* Use a global class name now */}
-  <div className="contact-widget-buttons">
-    {/* Schedule Button - Simpler classes */}
+{/* Container for buttons */}
+    <div className="contact-widget-buttons">
+
+      {/* Schedule Button */}
       <a
         href="https://form.typeform.com/to/j9ZpSklJ"
         target="_blank"
         rel="noopener noreferrer"
-        className="contact-widget-button contact-widget-button-primary">
-        Schedule a call {/* <-- No <p> tags */}
+        className="contact-widget-button cw-button-primary"> {/* Simple Custom Classes */}
+        Schedule a call
       </a>
+
+      {/* Chat with us Button */}
       <a
         href="https://t.me/+GoiXjMRh1042MTQ1"
         target="_blank"
         rel="noopener noreferrer"
-        className="contact-widget-button contact-widget-button-secondary">
-        <span className="contact-widget-button-icon cwbi-telegram"></span> {/* Icon span */}
-        Chat with us {/* <-- No <p> tags */}
+        className="contact-widget-button cw-button-secondary"> {/* Simple Custom Classes */}
+        {/* Img for light mode (shows dark icon) */}
+        <img src="/img/tg-logo-light.svg" alt="" className="contact-widget-button-icon icon-light-mode" />
+        {/* Img for dark mode (shows light icon) */}
+        <img src="/img/tg-logo-dark.svg" alt="" className="contact-widget-button-icon icon-dark-mode" />
+        <span className="contact-widget-button-text">Chat with us</span>
       </a>
-  </div>
+
+    </div>
 </div>
 {/* --- End Contact Widget --- */}
