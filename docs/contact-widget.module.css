@@ -36,8 +36,8 @@
     display: flex;
     flex-wrap: wrap;
     gap: 1rem;
-    justify-content: flex-start; /* Ensures left alignment */
- 
+    justify-content: flex-start; /* Align cards to the start (left) */
+    width: 100%; /* ADDED BACK: Make container full width */
   }
   
   /* --- ADDED: Adjust button padding --- */
