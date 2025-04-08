@@ -265,12 +265,12 @@ html[data-theme='dark'] .markdown table tbody tr:hover {
 
 /* Light mode: Use the dark/light-background version of the logo */
 .header-telegram-link {
-  mask-image: url('/img/tg-logo-light.svg'); /* ASSUMES this is for light theme */
+  mask-image: url('/img/tg-logo-dark.svg'); /* ASSUMES this is for light theme */
 }
 
 /* Dark mode: Use the light/dark-background version of the logo */
 html[data-theme='dark'] .header-telegram-link {
-  mask-image: url('/img/tg-logo-dark.svg'); /* ASSUMES this is for dark theme */
+  mask-image: url('/img/tg-logo-light.svg'); /* ASSUMES this is for dark theme */
 }
 
 /* Rule for Consistent Right Navbar Spacing */
