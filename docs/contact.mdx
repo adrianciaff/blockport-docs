@@ -22,24 +22,21 @@ For general inquiries:
   {/* Use a global class name now */}
   <div className="contact-widget-buttons">
     {/* Schedule Button - Simpler classes */}
-    <a
-      href="https://form.typeform.com/to/j9ZpSklJ"
-      target="_blank"
-      rel="noopener noreferrer"
-      className="contact-widget-button contact-widget-button-primary">
-      Schedule a call
-    </a>
-
-    {/* Chat with us Button - Simpler classes */}
-    <a
-      href="https://t.me/+GoiXjMRh1042MTQ1"
-      target="_blank"
-      rel="noopener noreferrer"
-      className="contact-widget-button contact-widget-button-secondary">
-      {/* Span for icon */}
-      <span className="contact-widget-button-icon cwbi-telegram"></span>
-      Chat with us
-    </a>
+      <a
+        href="https://form.typeform.com/to/j9ZpSklJ"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="contact-widget-button contact-widget-button-primary">
+        Schedule a call {/* <-- No <p> tags */}
+      </a>
+      <a
+        href="https://t.me/+GoiXjMRh1042MTQ1"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="contact-widget-button contact-widget-button-secondary">
+        <span className="contact-widget-button-icon cwbi-telegram"></span> {/* Icon span */}
+        Chat with us {/* <-- No <p> tags */}
+      </a>
   </div>
 </div>
 {/* --- End Contact Widget --- */}
