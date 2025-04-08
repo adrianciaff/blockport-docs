@@ -302,6 +302,7 @@ html[data-theme='dark'] .header-telegram-link {
   justify-content: center;
   padding: 0.5rem 1.25rem; /* Control padding directly */
   margin: 0.25rem 0.5rem 0.25rem 0; /* Spacing between/around buttons */
+  height: 2.75rem;
   border-radius: var(--ifm-global-radius);
   border: 1px solid transparent;
   font-weight: bold;
