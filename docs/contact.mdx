@@ -15,28 +15,31 @@ For general inquiries:
 * **Telegram:** [https://t.me/+dfbsk4pC0IxhMWVl](https://t.me/+dfbsk4pC0IxhMWVl) {/* Using Markdown link format */}
 
 {/* --- Start Contact Widget --- */}
-<div className={styles.contactWidget}>
+{/* Use a global class name now */}
+<div className="contact-widget">
   <h3>Still have questions?</h3>
   <p>
-    Book a meeting with our
-    team to learn more.
+    Book a meeting with our team to learn more.
   </p>
-  <div className={styles.widgetButtons}>
-    {/* Schedule Button */}
+  {/* Use a global class name now */}
+  <div className="contact-widget-buttons">
+    {/* Schedule Button - Simpler classes */}
     <a
       href="https://form.typeform.com/to/j9ZpSklJ"
       target="_blank"
       rel="noopener noreferrer"
-      className={`button button--primary button--lg ${styles.scheduleButton}`}>
+      className="contact-widget-button contact-widget-button-primary">
       Schedule a call
     </a>
 
-    {/* Chat with us Button */}
+    {/* Chat with us Button - Simpler classes */}
     <a
-      href="https://t.me/+GoiXjMRh1042MTQ1" 
+      href="https://t.me/+GoiXjMRh1042MTQ1"
       target="_blank"
       rel="noopener noreferrer"
-      className={`button button--secondary button--lg ${styles.chatButton}`}> {/* Use secondary style */}
+      className="contact-widget-button contact-widget-button-secondary">
+      {/* Span for icon */}
+      <span className="contact-widget-button-icon cwbi-telegram"></span>
       Chat with us
     </a>
   </div>
