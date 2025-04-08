@@ -3,32 +3,28 @@
 .contactWidget {
     padding: 2rem;
     border-radius: var(--ifm-global-radius);
-    background-color: var(--dark-secondary-background, #111D24); /* Dark background (use var defined in custom.css) */
+    background-color: var(--dark-secondary-background, #111D24); /* Dark background */
     color: var(--ifm-color-emphasis-800, #ccc); /* Light text */
-    max-width: 600px; /* Limit width */
-    margin: 3rem auto; /* Center and add vertical space */
+    max-width: 600px;
+    margin: 3rem auto;
     border: 1px solid var(--ifm-color-emphasis-300);
   }
   
   html[data-theme='light'] .contactWidget {
-     /* Optional: Define different styles for light theme if needed */
-     /* Example: Lighter background, darker text */
-     background-color: var(--ifm-navbar-background-color, #F0F0F0); /* Use light header/footer bg */
+     background-color: var(--ifm-navbar-background-color, #F0F0F0); /* Light background */
      color: var(--ifm-color-content-secondary);
      border: 1px solid var(--ifm-color-emphasis-200);
   }
-  
   
   .contactWidget h3 {
     margin-top: 0;
     margin-bottom: 0.75rem;
     font-weight: bold;
-    color: var(--ifm-color-content); /* Use theme heading color */
+    color: var(--ifm-color-content);
   }
   html[data-theme='dark'] .contactWidget h3 {
-      color: var(--ifm-color-content-secondary); /* Lighter heading for dark bg */
+      color: var(--ifm-color-content-secondary);
   }
-  
   
   .contactWidget p {
     margin-bottom: 1.5rem;
@@ -38,17 +34,53 @@
   
   .widgetButtons {
     display: flex;
-    flex-wrap: wrap; /* Allow buttons to wrap on small screens */
-    gap: 1rem; /* Space between buttons */
-    justify-content: flex-start; /* Align buttons left */
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: flex-start; /* Ensures left alignment */
+    width: 100%; /* ADDED: Ensure container takes width */
   }
   
-  /* Style the primary schedule button (inherits from .button--primary) */
+  /* --- ADDED: Adjust button padding --- */
+  /* Target buttons specifically within this widget */
+  .widgetButtons .button--lg {
+    padding-top: 0.6rem; /* Reduced vertical padding */
+    padding-bottom: 0.6rem;
+    /* Keep horizontal padding or adjust if needed */
+    /* padding-left: 1.5rem; */
+    /* padding-right: 1.5rem; */
+  }
+  
+  /* Style the primary schedule button */
   .scheduleButton {
      /* Add custom styles if needed */
   }
   
-  /* Style the secondary chat button if added */
+  /* Style the secondary chat button */
   .chatButton {
      /* Add custom styles if needed */
+     /* Ensure icon and text align nicely */
+     display: inline-flex;
+     align-items: center;
+  }
+  
+  /* --- ADDED: Button Icon Styles --- */
+  .buttonIcon {
+    display: inline-block;
+    width: 1em; /* Size relative to font size */
+    height: 1em;
+    margin-right: 0.5em; /* Space between icon and text */
+    background-color: currentColor; /* Use button text color */
+    mask-repeat: no-repeat;
+    mask-size: contain;
+    mask-position: center;
+    vertical-align: middle; /* Helps align with text */
+  }
+  
+  /* Light mode icon */
+  .buttonIconTelegram {
+     mask-image: url('/img/tg-logo-light.svg'); /* Dark icon for light buttons */
+  }
+  /* Dark mode icon */
+  html[data-theme='dark'] .buttonIconTelegram {
+     mask-image: url('/img/tg-logo-dark.svg'); /* Light icon for dark buttons */
   }
