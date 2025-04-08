@@ -252,15 +252,17 @@ html[data-theme='dark'] .markdown table tbody tr:hover {
 
 /* --- Navbar Icon Links --- */
 
-/* General style for icon links */
+/* --- Navbar Icon Links --- */
+
+/* General style for icon links - TEMPORARILY LARGER for debugging */
 .header-icon-link {
   display: inline-block;
-  width: 1.5rem;
-  height: 1.5rem;
-  background-color: currentColor; /* Color applied here */
-  mask-repeat: no-repeat;
-  mask-size: contain; /* CHANGED: Scale icon down to fit */
-  mask-position: center; /* ADDED: Center the icon */
+  width: 3rem;  /* INCREASED SIZE */
+  height: 3rem; /* INCREASED SIZE */
+  /* background-color: currentColor; /* REMOVED - rely on image color for now */
+  background-repeat: no-repeat;
+  background-size: contain; /* Scale image to fit */
+  background-position: center; /* Center image */
   vertical-align: middle;
   margin-bottom: 2px;
   /* Removed margin-left, handled by sibling rule */
@@ -268,12 +270,18 @@ html[data-theme='dark'] .markdown table tbody tr:hover {
 
 /* Light mode: Use the dark/light-background version of the logo */
 .header-telegram-link {
-  mask-image: url('/img/tg-logo-light.png'); /* Ensure path/filename correct */
+  /* Use background-image, assuming PNG now since you tried it */
+  /* Use tg-logo-light.png if that's the dark icon for light bg */
+  background-image: url('/img/tg-logo-light.png'); /* ADJUST FILENAME if needed */
+  /* mask-image: url('/img/tg-logo-light.svg'); */ /* REMOVED MASK */
 }
 
 /* Dark mode: Use the light/dark-background version of the logo */
 html[data-theme='dark'] .header-telegram-link {
-  mask-image: url('/img/tg-logo-dark.png'); /* Ensure path/filename correct */
+  /* Use background-image, assuming PNG */
+  /* Use tg-logo-dark.png if that's the light icon for dark bg */
+  background-image: url('/img/tg-logo-dark.png'); /* ADJUST FILENAME if needed */
+  /* mask-image: url('/img/tg-logo-dark.svg'); */ /* REMOVED MASK */
 }
 
 /* Rule for Consistent Right Navbar Spacing */
