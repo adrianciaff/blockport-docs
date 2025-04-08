@@ -74,10 +74,8 @@ const config = {
           {
             href: 'https://t.me/+GoiXjMRh1042MTQ1', // Your Telegram link
             position: 'right',
-            className: 'header-icon-link header-telegram-link', // Use specific classes for styling
-            label: '', // <-- ADD THIS EMPTY LABEL BACK
-            'aria-label': 'Telegram Group', // Accessibility label
-          }
+            label: 'Telegram', // Use simple text label for testing
+          }, // <-- Ensure comma is correct relative to other items
         ],
       },
       footer: {
