@@ -291,42 +291,56 @@ html[data-theme='dark'] .header-telegram-link {
 /* ... rest of file ... */
 /* --- NEW Contact Widget Button Styles (Global CSS) --- */
 
-/* Button container - Use Flexbox, align items by baseline */
 .contact-widget-buttons {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
-  margin-top: 1.5rem;
-  align-items: baseline; /* Align buttons based on text baseline */
-  /* justify-content: flex-start; /* Keep default left alignment */
+  text-align: left; /* Align buttons left */
+  margin-top: 1.5rem; /* Space above buttons */
 }
 
-/* Base button style */
 .contact-widget-button {
-  flex: 1; /* Keep for equal width */
-  min-width: 150px;
-
-  /* Keep internal alignment for icon/text */
-  display: inline-flex;
-  align-items: center; /* Vertically center icon/text *within* button */
+  display: inline-flex; /* Use flex for icon/text alignment */
+  align-items: center; /* Vertically center icon and text */
   justify-content: center;
-
-  /* Padding & Text */
-  padding: 0.4rem 1.25rem; /* Slightly reduced vertical padding */
-  /* REMOVED line-height property */
-  font-weight: bold;
-  font-size: 0.9rem;
-  text-align: center;
-  white-space: nowrap;
-
-  /* Appearance */
+  padding: 0.5rem 1.25rem; /* Control padding directly */
+  margin: 0.25rem 0.5rem 0.25rem 0; /* Spacing between/around buttons */
   border-radius: var(--ifm-global-radius);
   border: 1px solid transparent;
-  text-decoration: none !important;
+  font-weight: bold;
+  font-size: 0.9rem; /* Slightly smaller font */
+  line-height: 1.2; /* Adjust line height */
+  text-decoration: none !important; /* Override default link styles */
   cursor: pointer;
-  transition: all 0.2s ease;
-  width: 100%; /* Keep from previous step */
-  box-sizing: border-box; /* Keep from previous step */
+  transition: all 0.2s ease;   /* Prevent text wrapping */
+}
+
+/* Primary Button */
+:root .contact-widget-button.cw-button-primary {
+  background-color: var(--ifm-color-primary); /* Tangerine */
+  border-color: var(--ifm-color-primary);
+  color: white;
+}
+html[data-theme='dark'] .contact-widget-button.cw-button-primary {
+  background-color: var(--ifm-color-primary); /* Orange Peel */
+  border-color: var(--ifm-color-primary);
+  color: var(--ifm-background-color); /* Use dark background for text */
+}
+.contact-widget-button.cw-button-primary:hover {
+  opacity: 0.85;
+}
+
+/* Secondary Button */
+:root .contact-widget-button.cw-button-secondary {
+  background-color: transparent;
+  border-color: var(--ifm-color-primary); /* Use primary color border */
+  color: var(--ifm-color-primary); /* Use primary color text */
+}
+html[data-theme='dark'] .contact-widget-button.cw-button-secondary {
+  background-color: transparent;
+  border-color: var(--ifm-color-primary); /* Use primary color border */
+  color: var(--ifm-color-primary); /* Use primary color text */
+}
+.contact-widget-button.cw-button-secondary:hover {
+   background-color: rgba(var(--ifm-color-primary-rgb), 0.1); /* Faint primary bg on hover */
+   text-decoration: none;
 }
 
 
