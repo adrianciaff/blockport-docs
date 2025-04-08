@@ -34,23 +34,20 @@
   
   /* --- UPDATED Button Container --- */
   .widgetButtons {
-    display: flex; /* Keep flex display */
+    display: flex;
     flex-wrap: wrap;
     gap: 1rem;
-    /* REMOVED justify-content: flex-start; */
-    /* REMOVED width: 100%; */
-    /* REMOVED box-sizing: border-box; */
-  }
-  
-  /* --- ADDED: Push items after the first one to the right --- */
-  .widgetButtons > a:first-child {
-    margin-right: auto; /* Pushes subsequent items right */
+    justify-content: flex-start !important; /* Force left alignment */
+    width: 100% !important; /* Force full width */
+    box-sizing: border-box;
+    /* REMOVED margin-right: auto from first child */
   }
   
   /* Adjust button padding */
   .widgetButtons .button--lg {
-    padding-top: 0.6rem;
+    padding-top: 0.6rem; /* Reduced vertical padding */
     padding-bottom: 0.6rem;
+    line-height: normal; /* Helps vertical alignment */
   }
   
   /* Style the primary schedule button */
@@ -64,23 +61,24 @@
      align-items: center;
   }
   
-  /* Button Icon Styles */
+  /* --- Button Icon Styles --- */
   .buttonIcon {
-    display: inline-block;
+    display: inline-block; /* Make sure it displays */
     width: 1em;
     height: 1em;
     margin-right: 0.5em;
-    background-color: currentColor;
+    background-color: currentColor; /* Use button text color */
     mask-repeat: no-repeat;
     mask-size: contain;
     mask-position: center;
-    vertical-align: middle;
+    vertical-align: text-bottom; /* Try different alignment */
   }
+  
   /* Light mode icon */
   .buttonIconTelegram {
-     mask-image: url('/img/tg-logo-light.svg');
+     mask-image: url('/img/tg-logo-light.svg'); /* Dark icon for light buttons */
   }
   /* Dark mode icon */
   html[data-theme='dark'] .buttonIconTelegram {
-     mask-image: url('/img/tg-logo-dark.svg');
+     mask-image: url('/img/tg-logo-dark.svg'); /* Light icon for dark buttons */
   }
