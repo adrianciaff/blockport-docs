@@ -257,8 +257,8 @@ html[data-theme='dark'] .markdown table tbody tr:hover {
 /* General style for icon links - TEMPORARILY LARGER for debugging */
 .header-icon-link {
   display: inline-block;
-  width: 3rem;  /* INCREASED SIZE */
-  height: 3rem; /* INCREASED SIZE */
+  width: 1.5rem;  /* INCREASED SIZE */
+  height: 1.5rem; /* INCREASED SIZE */
   /* background-color: currentColor; /* REMOVED - rely on image color for now */
   background-repeat: no-repeat;
   background-size: contain; /* Scale image to fit */
