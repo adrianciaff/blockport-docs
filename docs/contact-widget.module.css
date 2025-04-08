@@ -36,8 +36,9 @@
     display: flex;
     flex-wrap: wrap;
     gap: 1rem;
-    justify-content: flex-start; /* Align cards to the start (left) */
-    width: 100%; /* ADDED BACK: Make container full width */
+    justify-content: flex-start;
+    width: 100%;
+    box-sizing: border-box; /* ADD THIS LINE */
   }
   
   /* --- ADDED: Adjust button padding --- */
