@@ -62,6 +62,7 @@ const config = {
           alt: 'Blockport Logo',
           src: 'img/blockport_logo_black.png',
           srcDark: 'img/blockport_logo_white.png',
+          href: 'https://www.blockport.xyz/',
         },
         items: [
           {
