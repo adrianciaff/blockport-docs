@@ -4,9 +4,9 @@
 // Assuming CommonJS for basic Vercel Node functions unless package.json specifies "type": "module"
 // const fetch = require('node-fetch'); // Use node-fetch or built-in fetch if Node version supports it
 
-const HELIUS_RPC_BASE_URL = 'https://mainnet.helius-rpc.com/';
+const HELIUS_RPC_BASE_URL = 'https://britta-kcmos0-fast-mainnet.helius-rpc.com';
 // This reads the key securely from Vercel Environment Variables on the backend
-const HELIUS_API_KEY = process.env.HELIUS_API_KEY; // Use a non-prefixed name for backend
+// const HELIUS_API_KEY = process.env.HELIUS_API_KEY; // Use a non-prefixed name for backend
 
 export default async function handler(request, response) {
   // Set CORS headers - adjust origin if needed, * is permissive
@@ -25,12 +25,12 @@ export default async function handler(request, response) {
     return response.status(405).json({ error: `Method ${request.method} Not Allowed` });
   }
 
-  if (!HELIUS_API_KEY) {
-    console.error("API Function Error: HELIUS_API_KEY environment variable not set.");
-    return response.status(500).json({ error: 'API key configuration error.' });
-  }
+  // if (!HELIUS_API_KEY) {
+  // console.error("API Function Error: HELIUS_API_KEY environment variable not set.");
+  // return response.status(500).json({ error: 'API key configuration error.' });
+  // }
 
-  const rpcUrl = `${HELIUS_RPC_BASE_URL}?api-key=${HELIUS_API_KEY}`;
+  const rpcUrl = HELIUS_RPC_BASE_URL; // `${HELIUS_RPC_BASE_URL}?api-key=${HELIUS_API_KEY}`;
 
   try {
     const heliusResponse = await fetch(rpcUrl, {
