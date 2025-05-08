@@ -15,11 +15,11 @@ export default function MinimalLandingPage() {
         <title>Blockport | Coming Soon</title>
         <meta name="description" content="Blockport Validator - Landing page coming soon" />
         {/* Favicon meta tags */}
-        <link rel="icon" type="image/x-icon" href="/favicon/favicon.ico" />
-        <link rel="icon" type="image/svg+xml" href="/favicon/favicon.svg" />
-        <link rel="apple-touch-icon" href="/favicon/apple-touch-icon.png" />
-        <link rel="icon" type="image/png" sizes="96x96" href="/favicon/favicon-96x96.png" />
-        <link rel="manifest" href="/favicon/site.webmanifest" />
+        <link rel="icon" type="image/x-icon" href={useBaseUrl('/favicon/favicon.ico')} />
+        <link rel="icon" type="image/svg+xml" href={useBaseUrl('/favicon/favicon.svg')} />
+        <link rel="apple-touch-icon" href={useBaseUrl('/favicon/apple-touch-icon.png')} />
+        <link rel="icon" type="image/png" sizes="96x96" href={useBaseUrl('/favicon/favicon-96x96.png')} />
+        <link rel="manifest" href={useBaseUrl('/favicon/site.webmanifest')} />
         {/* Prevent indexing this placeholder page if desired */}
         {/* <meta name="robots" content="noindex, nofollow" /> */}
       </Head>
