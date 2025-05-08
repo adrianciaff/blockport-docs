@@ -16,14 +16,31 @@
  */
  const sidebars = {
   tutorialSidebar: [
-    { type: 'doc', id: 'introduction', label: 'Introduction' }, // Object format
-    { type: 'doc', id: 'overview',     label: 'Overview'     }, // Object format
-    { type: 'doc', id: 'hardware',     label: 'Hardware'     }, // Object format
-    { type: 'doc', id: 'team',         label: 'Team'         }, // Object format (use correct id/label)
-    { type: 'doc', id: 'security',     label: 'Security'     }, // Object format (use correct id/label)
-    { type: 'doc', id: 'faq',          label: 'FAQ'          }, // Object format
-    { type: 'doc', id: 'contact',      label: 'Contact'      },
- 
+    { type: 'doc', id: 'introduction', label: 'Introduction' },
+    {
+      type: 'category',
+      label: 'Staking',
+      collapsible: true,
+      collapsed: false, // Or true if you want it collapsed by default
+      items: [
+        { type: 'doc', id: 'overview', label: 'Overview' },
+        { type: 'doc', id: 'hardware', label: 'Hardware' },
+        { type: 'doc', id: 'team',     label: 'Team' },
+        { type: 'doc', id: 'security', label: 'Security' }
+      ],
+    },
+    {
+      type: 'category',
+      label: 'Support',
+      collapsible: true,
+      collapsed: false, // Or true if you want it collapsed by default
+      items: [
+        { type: 'doc', id: 'wholesale-investors', label: 'Wholesale Investors' },
+        { type: 'doc', id: 'faq',      label: 'FAQ' },
+        { type: 'doc', id: 'contact',  label: 'Contact' }
+
+      ],
+    },
                                                                 // If file is form.mdx, use id: 'form', label: 'Contact Form'
   ],
   // ... other sidebars if they exist ...
