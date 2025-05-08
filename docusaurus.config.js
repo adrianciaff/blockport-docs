@@ -12,7 +12,7 @@ import {themes as prismThemes} from 'prism-react-renderer';
 const config = {
   title: 'Blockport',
   tagline: 'Documentation for our Solana Validator',
-  favicon: 'img/favicon.png',
+  favicon: 'favicon/favicon.ico',
   url: 'https://docs.blockport.xyz',
   baseUrl: '/',
   organizationName: 'Blockport',
